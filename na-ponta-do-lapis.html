@@ -1,0 +1,351 @@
+<!doctype html>
+<html lang="pt-BR">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="theme-color" content="#101827">
+  <meta name="description" content="Compare planos, legados e futuros possíveis para quem vive do trabalho. Informação, fontes e uma escolha consciente entre Lula e Flávio Bolsonaro.">
+  <meta property="og:title" content="O futuro do trabalho não cabe no silêncio">
+  <meta property="og:description" content="Compare os planos e legados de Lula e Flávio Bolsonaro antes de decidir seu voto.">
+  <title>Voto & Futuro do Trabalho | Compare antes de decidir</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;500;600;700;800&family=Source+Serif+4:opsz,wght@8..60,400;8..60,600;8..60,700&display=swap" rel="stylesheet">
+  <style>
+    :root{
+      --ink:#101827;
+      --ink-soft:#354154;
+      --paper:#f7f4ed;
+      --paper-deep:#ece8dd;
+      --white:#fffdf8;
+      --line:#d9d5ca;
+      --yellow:#e8b84a;
+      --yellow-soft:#f6df9c;
+      --coral:#cf5b4e;
+      --coral-soft:#f6dfdb;
+      --green:#2f6859;
+      --green-soft:#dcece4;
+      --blue-soft:#dce9f3;
+      --shadow:0 18px 55px rgba(16,24,39,.10);
+      --sans:'DM Sans',system-ui,-apple-system,BlinkMacSystemFont,'Segoe UI',sans-serif;
+      --serif:'Source Serif 4',Georgia,serif;
+      --max:1180px;
+    }
+    *{box-sizing:border-box}
+    html{scroll-behavior:smooth}
+    body{margin:0;background:var(--paper);color:var(--ink);font-family:var(--serif);-webkit-font-smoothing:antialiased}
+    body.menu-open{overflow:hidden}
+    a{color:inherit}
+    a:focus-visible,button:focus-visible,summary:focus-visible{outline:3px solid var(--coral);outline-offset:4px;border-radius:4px}
+    button{font:inherit}
+    .wrap{width:min(var(--max),calc(100% - 40px));margin:0 auto}
+    .sans{font-family:var(--sans)}
+    .eyebrow{font:800 12px/1.2 var(--sans);letter-spacing:.16em;text-transform:uppercase;color:var(--coral)}
+    .topline{background:var(--ink);color:var(--paper);font:600 12px/1.3 var(--sans);letter-spacing:.05em;text-align:center;padding:10px 20px}
+    .site-header{position:sticky;top:0;z-index:10;background:rgba(247,244,237,.94);backdrop-filter:blur(16px);border-bottom:1px solid var(--line)}
+    .nav{min-height:76px;display:flex;align-items:center;justify-content:space-between;gap:24px}
+    .brand{display:inline-flex;align-items:center;gap:10px;text-decoration:none;font:800 18px/1 var(--sans);letter-spacing:-.04em}
+    .brand-mark{width:34px;height:34px;position:relative;display:grid;place-items:center;color:var(--ink)}
+    .brand-mark:before{content:"";position:absolute;inset:4px 12px 4px 4px;border:3px solid var(--ink);border-right:0;transform:skew(-14deg)}
+    .brand-mark:after{content:"";width:8px;height:8px;border-radius:50%;background:var(--yellow);position:absolute;right:2px;top:6px;box-shadow:0 9px 0 var(--coral)}
+    .nav-links{display:flex;align-items:center;gap:24px;font:700 13px var(--sans)}
+    .nav-links a{text-decoration:none;color:var(--ink-soft)}
+    .nav-links a:hover{color:var(--coral)}
+    .nav-toggle{display:none;border:1px solid var(--line);background:var(--white);width:44px;height:44px;border-radius:10px;color:var(--ink);cursor:pointer}
+    .nav-toggle span,.nav-toggle span:before,.nav-toggle span:after{content:"";display:block;width:18px;height:2px;background:currentColor;position:relative;margin:auto}
+    .nav-toggle span:before{position:absolute;top:-6px}.nav-toggle span:after{position:absolute;top:6px}
+    .hero{position:relative;overflow:hidden;border-bottom:1px solid var(--line)}
+    .hero:before{content:"";position:absolute;width:540px;height:540px;border-radius:50%;right:-180px;top:-220px;background:var(--yellow-soft);opacity:.65}
+    .hero-grid{position:relative;display:grid;grid-template-columns:minmax(0,1.15fr) minmax(340px,.85fr);gap:70px;align-items:center;padding:clamp(58px,9vw,118px) 0 96px}
+    h1,h2,h3{font-family:var(--sans);letter-spacing:-.055em;margin:0}
+    h1{font-size:clamp(50px,7.4vw,102px);line-height:.91;max-width:780px}
+    h1 em{font-style:normal;color:var(--coral);position:relative;white-space:normal}
+    h1 em:after{content:"";position:absolute;height:8px;background:var(--yellow);left:3px;right:0;bottom:-9px;transform:rotate(-1.5deg);z-index:-1}
+    .hero-copy{font-size:clamp(20px,2.2vw,27px);line-height:1.36;max-width:690px;margin:30px 0 0;color:var(--ink-soft)}
+    .hero-actions{display:flex;flex-wrap:wrap;gap:12px;margin-top:34px}
+    .btn{display:inline-flex;align-items:center;justify-content:center;min-height:52px;padding:0 21px;border-radius:7px;text-decoration:none;font:800 14px var(--sans);letter-spacing:-.01em;cursor:pointer;transition:transform .2s ease,background .2s ease,box-shadow .2s ease}
+    .btn:hover{transform:translateY(-2px);box-shadow:0 8px 20px rgba(16,24,39,.15)}
+    .btn-primary{background:var(--ink);color:var(--white)}
+    .btn-accent{background:var(--coral);color:#fff}
+    .btn-ghost{border:1.5px solid var(--ink);color:var(--ink);background:transparent}
+    .hero-note{font:600 12px/1.45 var(--sans);color:var(--ink-soft);margin-top:18px;max-width:570px}
+    .hero-card{position:relative;background:var(--ink);color:var(--paper);padding:32px;border-radius:16px;box-shadow:var(--shadow);overflow:hidden}
+    .hero-card:after{content:"";position:absolute;width:130px;height:130px;border:26px solid var(--yellow);border-radius:50%;right:-45px;bottom:-45px}
+    .hero-card .eyebrow{color:var(--yellow)}
+    .hero-card h2{font-size:clamp(29px,3.6vw,47px);line-height:.98;margin:18px 0 26px;max-width:410px}
+    .hero-card blockquote{border-left:3px solid var(--yellow);padding:0 0 0 17px;margin:0;font-size:22px;line-height:1.27;max-width:430px}
+    .hero-card cite{display:block;font:600 11px/1.4 var(--sans);color:#b8c1cf;margin-top:12px;font-style:normal}
+    .hero-card-foot{display:flex;gap:12px;align-items:center;margin-top:30px;font:700 12px/1.35 var(--sans);color:#d5dbe4}
+    .hero-card-foot b{color:var(--yellow);font-size:28px;line-height:1}
+    .section{padding:clamp(68px,8vw,110px) 0}
+    .section-tight{padding:64px 0}
+    .section-heading{max-width:760px;margin-bottom:42px}
+    .section-heading h2{font-size:clamp(37px,5vw,67px);line-height:.97;margin-top:13px}
+    .section-heading p{font-size:20px;line-height:1.5;color:var(--ink-soft);margin:20px 0 0;max-width:650px}
+    .dark{background:var(--ink);color:var(--paper)}
+    .dark .section-heading p{color:#c3cbd5}
+    .dark .eyebrow{color:var(--yellow)}
+    .action-strip{background:var(--yellow);color:var(--ink)}
+    .action-grid{display:grid;grid-template-columns:1.3fr .7fr;gap:40px;align-items:center}
+    .action-grid h2{font-size:clamp(31px,4vw,54px);line-height:1}
+    .action-grid p{font-size:20px;line-height:1.45;margin:15px 0 0;max-width:700px}
+    .action-stat{font:800 clamp(42px,6vw,74px)/.9 var(--sans);text-align:right;letter-spacing:-.08em}.action-stat small{display:block;font:700 13px/1.4 var(--sans);letter-spacing:0;text-transform:uppercase;margin-top:10px}
+    .trust-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:1px;background:#354154;border:1px solid #354154;border-radius:14px;overflow:hidden}
+    .trust-item{background:var(--ink);padding:27px}.trust-item strong{font:800 20px/1.08 var(--sans);display:block;margin-bottom:11px}.trust-item p{font-size:17px;line-height:1.45;color:#c3cbd5;margin:0}
+    .choice-layout{display:grid;grid-template-columns:.8fr 1.2fr;gap:64px;align-items:start}
+    .choice-sticky{position:sticky;top:104px}.choice-sticky h2{font-size:clamp(37px,5vw,65px);line-height:.95;margin-top:14px}.choice-sticky p{font-size:20px;line-height:1.5;color:var(--ink-soft);margin:22px 0 0}
+    .choice-list{display:grid;gap:14px}.choice-item{background:var(--white);border:1px solid var(--line);border-radius:12px;padding:24px 25px 24px 71px;position:relative}.choice-item:before{position:absolute;left:23px;top:24px;font:800 16px/1 var(--sans);color:var(--coral)}.choice-item:nth-child(1):before{content:"01"}.choice-item:nth-child(2):before{content:"02"}.choice-item:nth-child(3):before{content:"03"}.choice-item h3{font-size:22px;letter-spacing:-.035em;margin-bottom:7px}.choice-item p{font-size:17px;line-height:1.5;color:var(--ink-soft);margin:0}.choice-item strong{color:var(--ink)}
+    .comparison{background:var(--paper-deep);border-top:1px solid var(--line);border-bottom:1px solid var(--line)}
+    .compare-head{display:flex;justify-content:space-between;gap:25px;align-items:end;margin-bottom:30px}.compare-head .section-heading{margin-bottom:0}.compare-note{font:700 12px/1.4 var(--sans);color:var(--ink-soft);max-width:220px;text-align:right}
+    .compare-table{width:100%;border-collapse:separate;border-spacing:0;overflow:hidden;border:1px solid var(--line);border-radius:14px;background:var(--white);font-size:16px}.compare-table th,.compare-table td{text-align:left;vertical-align:top;padding:22px;border-bottom:1px solid var(--line)}.compare-table th{font:800 13px/1.2 var(--sans);letter-spacing:.09em;text-transform:uppercase;background:var(--ink);color:var(--paper)}.compare-table th:nth-child(2){color:var(--yellow)}.compare-table th:nth-child(3){color:#ffb6ad}.compare-table tr:last-child td{border-bottom:0}.compare-table td:first-child{font:800 17px/1.15 var(--sans);width:18%;color:var(--ink)}.compare-table td:nth-child(2){width:41%}.compare-table td:nth-child(3){width:41%}.compare-table td p{margin:0;line-height:1.46;color:var(--ink-soft)}.compare-table td p+p{margin-top:9px}.tag{display:inline-block;font:800 10px/1 var(--sans);letter-spacing:.1em;text-transform:uppercase;padding:5px 7px;border-radius:4px;margin-bottom:10px}.tag-plan{background:var(--blue-soft);color:#1a4f70}.tag-legacy{background:var(--green-soft);color:#245846}.tag-risk{background:var(--coral-soft);color:#87382e}
+    .future-grid{display:grid;grid-template-columns:1fr 1fr;gap:18px}.future-card{border-radius:14px;padding:30px;min-height:320px}.future-card h3{font-size:31px;line-height:1;margin:18px 0 18px}.future-card p{font-size:19px;line-height:1.5;margin:0;color:var(--ink-soft)}.future-lula{background:var(--green-soft);border:1px solid #b8d8c9}.future-flavio{background:#e8e4dc;border:1px solid #d3cec0}.future-card ul{padding-left:20px;margin:22px 0 0;font-size:16px;line-height:1.5;color:var(--ink-soft)}
+    .legacy-section{background:var(--coral);color:#fff}.legacy-section .section-heading p{color:#ffe7e2}.legacy-section .eyebrow{color:var(--yellow-soft)}.legacy-grid{display:grid;grid-template-columns:1.05fr 1.95fr;gap:24px;align-items:stretch}.legacy-lead{background:var(--ink);border-radius:14px;padding:30px;display:flex;flex-direction:column;justify-content:space-between}.legacy-lead h2{font-size:clamp(35px,4.5vw,60px);line-height:.95;margin:17px 0}.legacy-lead p{font-size:18px;line-height:1.5;color:#d9dfe7;margin:0}.legacy-lead .tag{background:var(--yellow);color:var(--ink);align-self:flex-start}.legacy-cards{display:grid;grid-template-columns:repeat(2,1fr);gap:12px}.legacy-card{background:#fff8f3;color:var(--ink);border-radius:12px;padding:22px}.legacy-card h3{font-size:22px;line-height:1.05;margin:13px 0 9px}.legacy-card p{font-size:16px;line-height:1.45;color:var(--ink-soft);margin:0}.legacy-card b{font:800 27px/1 var(--sans);color:var(--coral)}.legacy-caveat{font:600 12px/1.5 var(--sans);color:#ffe7e2;margin:18px 0 0;max-width:820px}.legacy-verdict{border-top:2px solid var(--yellow);margin:28px 0 0;padding-top:18px;font:800 clamp(22px,3vw,34px)/1.08 var(--sans);letter-spacing:-.03em;color:#fff}
+    .post-section{background:var(--paper-deep);border-top:1px solid var(--line);border-bottom:1px solid var(--line)}.post-grid{display:grid;grid-template-columns:1fr 1fr;gap:16px}.post-card{border-radius:14px;padding:28px;min-height:300px}.post-card h3{font-size:32px;line-height:1;margin:15px 0}.post-card p{font-size:17px;line-height:1.5;color:var(--ink-soft);margin:0}.post-card ul{padding-left:19px;color:var(--ink-soft);font-size:16px;line-height:1.5}.post-loss{background:var(--ink);color:var(--paper)}.post-loss p,.post-loss li{color:#d9dfe7}.post-loss .eyebrow{color:var(--yellow)}.post-response{background:var(--green-soft);border:1px solid #b8d8c9}.post-note{font:600 12px/1.5 var(--sans);color:var(--ink-soft);margin-top:20px!important}
+    .evidence-layout{display:grid;grid-template-columns:.9fr 1.1fr;gap:60px;align-items:start}.evidence-big{font:800 clamp(76px,10vw,145px)/.8 var(--sans);letter-spacing:-.09em;color:var(--yellow);margin:16px 0}.evidence-big small{display:block;font:700 12px/1.35 var(--sans);letter-spacing:.04em;text-transform:uppercase;color:#c3cbd5;margin:19px 0 0;max-width:300px}.evidence-copy{font-size:21px;line-height:1.48;color:#d9dfe7;margin:0}.source-note{font:600 12px/1.5 var(--sans);color:#9faaba;margin-top:18px}.evidence-cards{display:grid;gap:12px}.evidence-card{border:1px solid #354154;border-radius:12px;padding:22px}.evidence-card b{font:800 25px/1 var(--sans);color:var(--yellow);display:block;margin-bottom:8px}.evidence-card p{font-size:17px;line-height:1.45;color:#d9dfe7;margin:0}.evidence-card em{font-style:normal;color:var(--paper);font-weight:700}
+    .timeline{position:relative;display:grid;grid-template-columns:repeat(4,1fr);gap:0;margin-top:46px}.timeline:before{content:"";position:absolute;left:0;right:0;top:12px;height:2px;background:var(--yellow)}.milestone{position:relative;padding:42px 20px 0 0}.milestone:before{content:"";position:absolute;width:24px;height:24px;border:6px solid var(--paper);background:var(--coral);border-radius:50%;top:0;left:0;z-index:1}.milestone strong{display:block;font:800 18px/1 var(--sans);margin-bottom:11px}.milestone p{font-size:16px;line-height:1.45;color:#c3cbd5;margin:0;padding-right:12px}
+    .faq-grid{display:grid;grid-template-columns:1fr 1fr;gap:14px}.faq-grid details{background:var(--white);border:1px solid var(--line);border-radius:10px;padding:20px 22px}.faq-grid summary{cursor:pointer;list-style:none;font:800 18px/1.2 var(--sans);padding-right:22px;position:relative}.faq-grid summary::-webkit-details-marker{display:none}.faq-grid summary:after{content:"+";position:absolute;right:0;top:-2px;font:500 25px/1 var(--sans);color:var(--coral)}.faq-grid details[open] summary:after{content:"–"}.faq-grid details p{font-size:17px;line-height:1.5;color:var(--ink-soft);margin:15px 0 0}.faq-grid details p strong{color:var(--ink)}
+    .closing{background:var(--coral);color:#fff}.closing .eyebrow{color:var(--yellow-soft)}.closing-grid{display:grid;grid-template-columns:1.1fr .9fr;gap:54px;align-items:end}.closing h2{font-size:clamp(43px,6vw,82px);line-height:.9;margin-top:15px}.closing p{font-size:20px;line-height:1.48;margin:22px 0 0;max-width:700px}.closing .btn-primary{background:var(--white);color:var(--ink)}.closing .btn-ghost{border-color:#fff;color:#fff}.closing .btn-ghost:hover{background:#fff;color:var(--ink)}
+    .sources{background:var(--paper-deep);border-top:1px solid var(--line)}.sources-grid{display:grid;grid-template-columns:1fr 1fr;gap:45px}.sources h2{font-size:clamp(34px,4vw,54px);line-height:1;margin-top:14px}.sources p{font-size:18px;line-height:1.5;color:var(--ink-soft)}.source-list{margin:0;padding-left:22px;font:500 14px/1.55 var(--sans);color:var(--ink-soft)}.source-list li+li{margin-top:10px}.source-list a{color:var(--ink);font-weight:700}.method{border-left:3px solid var(--yellow);padding-left:18px;margin-top:22px}.method p{margin:0;font-size:16px}.footer{padding:24px 0;font:600 12px/1.5 var(--sans);color:var(--ink-soft);display:flex;justify-content:space-between;gap:20px;flex-wrap:wrap}.footer a{text-decoration:none}.footer a:hover{text-decoration:underline}
+    .reveal{animation:rise .65s ease both}.delay-1{animation-delay:.08s}.delay-2{animation-delay:.16s}@keyframes rise{from{opacity:0;transform:translateY(14px)}to{opacity:1;transform:none}}
+    @media (max-width:900px){.hero-grid,.choice-layout,.evidence-layout,.closing-grid{grid-template-columns:1fr;gap:42px}.hero-grid{padding-top:72px}.hero-card{max-width:620px}.choice-sticky{position:static}.action-grid{grid-template-columns:1fr}.action-stat{text-align:left}.timeline{grid-template-columns:repeat(2,1fr);gap:28px 0}.timeline:before{display:none}.milestone{padding-top:34px}.milestone:before{top:0}.compare-head{display:block}.compare-note{text-align:left;max-width:100%;margin-top:15px}.sources-grid{grid-template-columns:1fr}}
+    @media (max-width:680px){.wrap{width:min(var(--max),calc(100% - 28px))}.topline{font-size:10px;padding:9px 12px}.nav{min-height:66px}.nav-toggle{display:block}.nav-links{display:none;position:absolute;left:14px;right:14px;top:74px;background:var(--white);border:1px solid var(--line);border-radius:12px;padding:12px;box-shadow:var(--shadow);flex-direction:column;align-items:stretch;gap:3px}.nav-links.is-open{display:flex}.nav-links a{padding:13px 12px;border-radius:7px}.nav-links a:hover{background:var(--paper-deep)}h1{font-size:clamp(48px,15vw,74px)}h1 em{white-space:normal}.hero-grid{padding:54px 0 64px}.hero-copy{font-size:20px}.hero-card{padding:25px}.hero-card blockquote{font-size:20px}.hero-actions .btn{width:100%}.section{padding:68px 0}.section-heading h2,.choice-sticky h2{font-size:clamp(37px,12vw,58px)}.trust-grid{grid-template-columns:1fr}.trust-item{padding:22px}.choice-item{padding:22px 20px 22px 61px}.choice-item:before{left:20px}.compare-table{display:block;border:0;background:transparent;border-radius:0}.compare-table thead{display:none}.compare-table tbody,.compare-table tr,.compare-table td{display:block;width:auto!important}.compare-table tr{background:var(--white);border:1px solid var(--line);border-radius:12px;margin-bottom:12px;overflow:hidden}.compare-table td{border:0;padding:17px 18px}.compare-table td:first-child{background:var(--ink);color:var(--paper);font-size:18px}.compare-table td:nth-child(2){border-bottom:1px solid var(--line)}.compare-table td:nth-child(2):before,.compare-table td:nth-child(3):before{display:block;font:800 11px/1 var(--sans);letter-spacing:.1em;text-transform:uppercase;margin-bottom:9px}.compare-table td:nth-child(2):before{content:"LULA";color:var(--green)}.compare-table td:nth-child(3):before{content:"FLÁVIO";color:var(--coral)}.future-grid{grid-template-columns:1fr}.future-card{min-height:0;padding:24px}.timeline{grid-template-columns:1fr;gap:21px}.milestone{padding:0 0 0 42px}.milestone:before{left:0;top:0}.faq-grid{grid-template-columns:1fr}.closing h2{font-size:clamp(44px,13vw,69px)}.closing .hero-actions{flex-direction:column}.closing .btn{width:100%}.footer{display:block}.footer span{display:block;margin-bottom:8px}}
+    @media (max-width:900px){.legacy-grid{grid-template-columns:1fr}.post-grid{grid-template-columns:1fr}}
+    @media (max-width:680px){.legacy-cards{grid-template-columns:1fr}.legacy-lead{padding:24px}.legacy-card{padding:20px}}
+    @media (prefers-reduced-motion:reduce){html{scroll-behavior:auto}.reveal{animation:none}.btn{transition:none}}
+  </style>
+</head>
+<body>
+  <div class="topline">UMA PÁGINA DE COMPARAÇÃO POLÍTICA · LEIA, COMPARE E DECIDA</div>
+  <header class="site-header">
+    <div class="wrap nav">
+      <a class="brand" href="#top" aria-label="Voto e Futuro do Trabalho — início"><span class="brand-mark" aria-hidden="true"></span><span>Voto <span style="color:var(--coral)">/</span> Futuro</span></a>
+      <button class="nav-toggle" type="button" aria-expanded="false" aria-controls="nav-links" aria-label="Abrir menu"><span></span></button>
+      <nav id="nav-links" class="nav-links" aria-label="Navegação principal">
+        <a href="#comparar">Comparar</a>
+        <a href="#futuro">Futuro do Brasil</a>
+        <a href="#legado-bolsonaro">Legado Bolsonaro</a>
+        <a href="#evidencias">Evidências</a>
+        <a href="#duvidas">Dúvidas</a>
+        <a href="#fontes">Fontes</a>
+      </nav>
+    </div>
+  </header>
+
+  <main id="top">
+    <section class="hero">
+      <div class="wrap hero-grid">
+        <div class="reveal">
+          <div class="eyebrow">Para quem vive do trabalho</div>
+          <h1>O futuro do trabalho <em>não cabe no silêncio.</em></h1>
+          <p class="hero-copy">Seu voto decide quem vai cuidar do salário, do SUS, da educação, da moradia, dos direitos e do futuro produtivo do Brasil.</p>
+          <div class="hero-actions">
+            <a class="btn btn-primary" href="#comparar">Comparar os dois planos</a>
+            <a class="btn btn-ghost" href="#voto">Entender branco, nulo e abstenção</a>
+          </div>
+          <p class="hero-note">Não existe candidato perfeito. Existe uma escolha concreta — e a possibilidade de votar para impedir retrocessos, organizar-se e cobrar avanços.</p>
+        </div>
+        <aside class="hero-card reveal delay-1" aria-label="Mensagem principal">
+          <div class="eyebrow">Uma escolha comparativa</div>
+          <h2>Uma vida mais confortável precisa de mais do que promessa.</h2>
+          <blockquote>“Colocar o pobre no orçamento” é uma ideia de futuro: renda, serviço público, trabalho e dignidade.</blockquote>
+          <cite>Formulação presente no campo programático de Lula; o conteúdo desta página também registra limites e contradições.</cite>
+          <div class="hero-card-foot"><b>01</b><span>Compare o risco para a sua renda, o seu tempo e os direitos da sua família.</span></div>
+        </aside>
+      </div>
+    </section>
+
+    <section class="action-strip section-tight" aria-label="Mensagem de decisão">
+      <div class="wrap action-grid">
+        <div><h2>Não escolher também deixa uma escolha para os outros.</h2><p>O resultado é definido pelos votos válidos. Votos brancos e nulos não são redistribuídos e não anulam automaticamente a eleição.</p></div>
+        <div class="action-stat">VOTE<small>e continue cobrando depois da urna</small></div>
+      </div>
+    </section>
+
+    <section id="voto" class="section">
+      <div class="wrap choice-layout">
+        <div class="choice-sticky">
+          <div class="eyebrow">Antes de decidir</div>
+          <h2>Branco, nulo e ausência não são a mesma coisa.</h2>
+          <p>A rejeição é legítima. Mas é importante saber qual mensagem cada escolha produz — e qual efeito ela realmente tem no resultado.</p>
+        </div>
+        <div class="choice-list">
+          <article class="choice-item"><h3>Voto em branco</h3><p>Em geral, comunica: <strong>“não encontrei uma opção que me represente”</strong>. É registrado, mas não entra na contagem dos votos válidos.</p></article>
+          <article class="choice-item"><h3>Voto nulo</h3><p>Pode ser rejeição ativa ou protesto — mas também pode decorrer de erro. A pesquisa acadêmica alerta: <strong>não é correto interpretar todo nulo do mesmo modo.</strong></p></article>
+          <article class="choice-item"><h3>Abstenção</h3><p>Pode expressar descrença, mas também dificuldade material, doença, trabalho ou cuidado familiar. <strong>Ela não impede que um candidato seja eleito.</strong></p></article>
+        </div>
+      </div>
+    </section>
+
+    <section class="dark section-tight">
+      <div class="wrap">
+        <div class="section-heading"><div class="eyebrow">O voto na vida real</div><h2>Para quem trabalha, política vira salário, tempo e proteção.</h2><p>O governo influencia regras, orçamento e serviços que afetam a vida concreta — mesmo quando a pessoa não acompanha política todos os dias.</p></div>
+        <div class="trust-grid">
+          <div class="trust-item"><strong>Salário e jornada</strong><p>Salário-mínimo, fiscalização, direitos, descanso, escala e proteção para quem trabalha por aplicativo.</p></div>
+          <div class="trust-item"><strong>Salário social</strong><p>SUS, escola, creche, remédio, moradia e transporte preservam renda que a família teria de gastar no mercado.</p></div>
+          <div class="trust-item"><strong>Futuro produtivo</strong><p>Indústria, ciência, energia, tecnologia, clima e empregos qualificados definem a autonomia do país.</p></div>
+        </div>
+      </div>
+    </section>
+
+    <section id="comparar" class="comparison section">
+      <div class="wrap">
+        <div class="compare-head">
+          <div class="section-heading"><div class="eyebrow">Promessa × legado × risco</div><h2>Dois planos. Dois caminhos.</h2><p>Compare o que os programas propõem e o que cada visão pode significar para quem vive do próprio trabalho.</p></div>
+          <div class="compare-note">Use a tabela como mapa. Abra as fontes antes de compartilhar qualquer número.</div>
+        </div>
+        <table class="compare-table">
+          <thead><tr><th>Tema</th><th>Lula</th><th>Flávio Bolsonaro</th></tr></thead>
+          <tbody>
+            <tr><td>Trabalho</td><td><span class="tag tag-plan">Plano</span><p>Valorização real do salário-mínimo, direitos para plataformas, combate à pejotização, redução da jornada e proteção coletiva.</p><p><strong>Leitura:</strong> aumenta o poder de negociação do trabalho.</p></td><td><span class="tag tag-plan">Plano</span><p>Contratos diferenciados, menor custo de contratação, negociado sobre legislado, flexibilidade e empreendedorismo.</p><p><strong>Risco:</strong> contratação mais barata sem garantia de salário ou estabilidade maiores.</p></td></tr>
+            <tr><td>Renda e proteção</td><td><span class="tag tag-legacy">Legado + plano</span><p>Bolsa Família, Regra de Proteção, salário social e integração com saúde e educação.</p><p><strong>Leitura:</strong> reduz a dependência imediata do trabalhador em relação ao empregador.</p></td><td><span class="tag tag-plan">Plano</span><p>Programas sociais como ponte para trabalho, crédito, propriedade e autonomia individual.</p><p><strong>Risco:</strong> responsabilizar a família por problemas estruturais de renda e emprego.</p></td></tr>
+            <tr><td>Saúde e educação</td><td><span class="tag tag-legacy">Legado + plano</span><p>SUS, Farmácia Popular, Mais Médicos, Prouni, Reuni, institutos federais, Fundeb, cotas e assistência estudantil.</p><p><strong>Leitura:</strong> direitos universais funcionam como salário social.</p></td><td><span class="tag tag-plan">Plano</span><p>Redução de filas, digitalização, gestão por resultados, qualificação e ensino técnico ligado ao mercado.</p><p><strong>Risco:</strong> eficiência não substitui financiamento e universalidade.</p></td></tr>
+            <tr><td>Moradia e infraestrutura</td><td><span class="tag tag-legacy">Legado + plano</span><p>Minha Casa Minha Vida, PAC, saneamento, mobilidade, urbanização e prevenção de desastres.</p><p><strong>Leitura:</strong> moradia como direito à cidade, não apenas escritura.</p></td><td><span class="tag tag-plan">Plano</span><p>Casa própria, regularização fundiária, crédito, PPPs e concessões.</p><p><strong>Risco:</strong> crédito sem renda e serviço público pode virar endividamento e periferização.</p></td></tr>
+            <tr><td>Segurança</td><td><span class="tag tag-plan">Plano</span><p>Inteligência, integração federativa, combate financeiro, prevenção, urbanização e direitos humanos.</p><p><strong>Leitura:</strong> combina repressão qualificada com prevenção.</p></td><td><span class="tag tag-plan">Plano</span><p>Endurecimento penal, expansão prisional, fronteiras militarizadas, vigilância e reconhecimento facial.</p><p><strong>Risco:</strong> superencarceramento, custos e erros tecnológicos.</p></td></tr>
+            <tr><td>Futuro nacional</td><td><span class="tag tag-plan">Projeto integrado</span><p>Indústria, ciência, soberania, energia, compras públicas, empregos verdes e transição justa.</p><p><strong>Leitura:</strong> conecta capacidades produtivas e proteção social.</p></td><td><span class="tag tag-plan">Projeto de mercado</span><p>Investimento privado, concessões, desburocratização, propriedade e competitividade.</p><p><strong>Risco:</strong> crescimento sem contrapartidas pode reforçar dependência e concentração.</p></td></tr>
+          </tbody>
+        </table>
+      </div>
+    </section>
+
+    <section id="futuro" class="section">
+      <div class="wrap">
+        <div class="section-heading"><div class="eyebrow">Que futuro está sendo oferecido?</div><h2>Uma vida melhor depende de capacidade coletiva.</h2><p>O futuro não é só PIB. É poder viver, trabalhar, estudar, cuidar e envelhecer sem que uma doença, uma demissão ou uma enchente destrua tudo.</p></div>
+        <div class="future-grid">
+          <article class="future-card future-lula"><div class="tag tag-legacy">Projeto integrado</div><h3>Lula: construir capacidades no país</h3><p>O plano conecta trabalho, renda, serviços públicos, indústria, ciência, soberania tecnológica, transição ecológica e redução das desigualdades.</p><ul><li>Produzir medicamentos, energia, tecnologia e alimentos com mais autonomia.</li><li>Gerar empregos qualificados com política industrial e investimento.</li><li>Proteger a população das crises climáticas e econômicas.</li><li>Ampliar direitos para que a liberdade seja material, não apenas formal.</li></ul></article>
+          <article class="future-card future-flavio"><div class="tag tag-risk">Projeto de mercado e ordem</div><h3>Flávio: prosperar pela autonomia individual</h3><p>O plano prioriza segurança, propriedade, crédito, empreendedorismo, digitalização, menor burocracia e maior espaço para o investimento privado.</p><ul><li>Pode facilitar algumas iniciativas e pequenos negócios.</li><li>Confia mais no mercado para criar oportunidades.</li><li>Oferece menos proteção coletiva no trabalho.</li><li>Precisa explicar como financiar a agenda social, prisional e de infraestrutura junto com cortes de impostos.</li></ul></article>
+        </div>
+      </div>
+    </section>
+
+    <section id="legado-bolsonaro" class="legacy-section section">
+      <div class="wrap">
+        <div class="section-heading"><div class="eyebrow">Antes de escolher um sucessor</div><h2>O custo do bolsonarismo também entra na urna.</h2><p>Flávio Bolsonaro não é juridicamente responsável por cada ato do governo de seu pai. Mas se apresenta como sucessor de seu campo político. O eleitor trabalhador tem o direito de perguntar: sucessor de qual legado — e com quais consequências para salário, saúde, direitos, democracia e uso do Estado?</p></div>
+        <div class="legacy-grid">
+          <article class="legacy-lead"><div><span class="tag">Balanço documentado</span><h2>Não foi um erro isolado. Foi um padrão de governo.</h2><p>O período combinou tragédia sanitária, fome, perda de renda, ataque à fiscalização ambiental, opacidade orçamentária e conflito com instituições. Não se trata de dizer que cada problema foi criado por uma só pessoa; trata-se de cobrar como o governo respondeu — e o que seu sucessor pretende repetir ou corrigir.</p><p class="legacy-verdict">Para quem vive do trabalho, esse legado significa mais risco, menos proteção e menos controle democrático.</p></div><p class="legacy-caveat">Investigações, denúncias e pedidos de indiciamento não equivalem a condenação. No caso das rachadinhas, houve investigação e rejeição da denúncia, não condenação. A crítica política deve continuar separando fato documentado, decisão judicial e interpretação.</p></article>
+          <div class="legacy-cards">
+            <article class="legacy-card"><b>666 mil+</b><h3>Uma tragédia sanitária agravada pelo governo</h3><p>Até maio de 2022, o Ministério da Saúde registrava cerca de 666 mil mortes. Houve quatro ministros, conflitos sobre prevenção e promoção de tratamento precoce sem evidência suficiente. O Auxílio Emergencial protegeu renda, mas não apaga falhas de coordenação e governança.</p></article>
+            <article class="legacy-card"><b>33,1 mi</b><h3>Fome em massa no fim do mandato</h3><p>O IBGE registrou 62,5 milhões na pobreza em 2021. A Rede PENSSAN estimou 33,1 milhões em insegurança alimentar grave em 2022. Pandemia e fatores externos pesaram, mas a resposta federal foi parte decisiva do resultado social.</p></article>
+            <article class="legacy-card"><b>13.038 km²</b><h3>Desmatamento e fiscalização sob ataque</h3><p>O PRODES registrou esse desmatamento na Amazônia Legal em 2021, muito acima do patamar de 2018. Conflitos com órgãos ambientais e desgaste internacional expuseram um projeto que tratou proteção ambiental como obstáculo.</p></article>
+            <article class="legacy-card"><b>R$ 53 bi</b><h3>Orçamento secreto: poder sem transparência</h3><p>O STF declarou inconstitucionais práticas da RP9 e registrou mais de R$ 53 bilhões vinculados entre 2020 e 2022. Ocultar solicitantes e concentrar poder sobre recursos é o oposto de controle democrático do orçamento.</p></article>
+            <article class="legacy-card"><b>RACHADINHAS</b><h3>Queiroz, Flávio e dinheiro público</h3><p>O MPRJ investigou suspeitas de devolução de salários na Alerj, com movimentações financeiras atípicas e denúncia contra Flávio. A denúncia foi rejeitada após disputas sobre foro e provas; isso não transforma a investigação em “invenção” nem em condenação.</p></article>
+            <article class="legacy-card"><b>PF · PGR · ABIN</b><h3>Instituições sob suspeita de blindagem</h3><p>Bolsonaro nomeou Augusto Aras para a PGR, trocou Maurício Valeixo na PF e indicou Alexandre Ramagem. Também houve investigações sobre possível uso da Abin, Receita e Serpro em favor da família. A troca de PF não foi judicialmente provada como ato para livrar Flávio — mas a sequência exige escrutínio, não silêncio.</p></article>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section class="post-section section">
+      <div class="wrap">
+        <div class="section-heading"><div class="eyebrow">2016–2022 · a interrupção também deixou marcas</div><h2>O país saiu mais fraco — e Lula herdou a conta.</h2><p>O impeachment de 2016 interrompeu o ciclo de governos do PT. Entre Temer e Bolsonaro, a classe trabalhadora enfrentou teto de gastos, flexibilização trabalhista, reforma previdenciária, perda de renda e uma economia com pouco espaço para investimento social.</p></div>
+        <div class="post-grid">
+          <article class="post-card post-loss"><div class="eyebrow">Perdas para quem trabalha</div><h3>Teto, direitos e aposentadoria mais distantes.</h3><ul><li>EC 95/2016 limitou despesas primárias por 20 exercícios, comprimindo a capacidade de financiar saúde, educação e assistência.</li><li>A Reforma Trabalhista ampliou o negociado sobre o legislado, alterou jornadas e enfraqueceu o financiamento sindical.</li><li>A EC 103/2019 elevou requisitos e mudou cálculos previdenciários.</li></ul><p class="post-note">Não era a única forma de enfrentar o desequilíbrio fiscal: havia alternativas debatidas, como ampliar receitas progressivas, rever renúncias, controlar juros e proteger investimento público.</p></article>
+          <article class="post-card post-response"><div class="eyebrow">Regulação e investigação posteriores</div><h3>O contraste é quem abre a porta — e quem fiscaliza depois.</h3><ul><li>Temer sancionou a Lei 13.756/2018, que criou as apostas de quota fixa esportivas. Lula sancionou a Lei 14.790/2023 e criou regras e autorizações pela Fazenda; isso regula o problema, não apaga seus efeitos sociais.</li><li>A Operação Infiltrados, em MS, investigou policiais suspeitos de desviar cocaína usando estruturas de segurança. A apuração ocorreu no governo Lula, mas foi conduzida pelo Gaeco e não prova mérito pessoal do presidente.</li><li>A Operação Compliance Zero investigou o Banco Master e Daniel Vorcaro; a CPI também convocou Paulo Guedes. Investigação não é condenação, mas mostra a importância de instituições que apuram conexões de poder.</li></ul><p class="post-note">O ponto político não é dizer que Lula é imune a corrupção. É comparar se as instituições investigam ou são usadas para blindar aliados.</p></article>
+        </div>
+      </div>
+    </section>
+
+    <section id="evidencias" class="dark section">
+      <div class="wrap evidence-layout">
+        <div><div class="eyebrow">Evidência, não corrente</div><div class="evidence-big">85,18%<small>do saldo líquido de empregos formais no período analisado correspondeu a beneficiários do Bolsa Família</small></div><p class="evidence-copy">Estudo da FGV baseado no Caged e divulgado pelo MDS: entre janeiro de 2023 e julho de 2026, beneficiários responderam por 4,58 milhões de um saldo nacional de 5,38 milhões de empregos formais.</p><p class="source-note">Isso não significa que 85,18% de todos os beneficiários estejam empregados nem prova que o programa criou sozinho todas as vagas.</p></div>
+        <div class="evidence-cards">
+          <div class="evidence-card"><b>60,68%</b><p>dos beneficiários de 2014 haviam deixado o programa até 2025, segundo estudo longitudinal divulgado pela FGV.</p></div>
+          <div class="evidence-card"><b>79,4%</b><p>foi a taxa de saída entre pessoas que conseguiram carteira assinada no acompanhamento da FGV.</p></div>
+          <div class="evidence-card"><b>O ponto</b><p>O Bolsa Família não substitui emprego protegido. Mas a evidência <em>contradiz a ideia de que o benefício acomoda automaticamente quem recebe.</em></p></div>
+        </div>
+      </div>
+    </section>
+
+    <section class="dark section-tight" style="border-top:1px solid #354154">
+      <div class="wrap">
+        <div class="section-heading"><div class="eyebrow">Entregas que podem ser verificadas</div><h2>Uma linha do tempo de políticas públicas.</h2><p>Legado é diferente de promessa. Ele envolve lei, orçamento, execução e efeito material — com acertos e limites.</p></div>
+        <div class="timeline">
+          <div class="milestone"><strong>2003–2010</strong><p>Bolsa Família, Fome Zero, Luz para Todos, valorização do salário-mínimo, Prouni, Farmácia Popular, PAC e expansão federal.</p></div>
+          <div class="milestone"><strong>2011–2016</strong><p>Brasil Sem Miséria, Brasil Carinhoso, Minha Casa Minha Vida 2, Pronatec, Lei de Cotas, Mais Médicos e Água para Todos.</p></div>
+          <div class="milestone"><strong>2023–hoje</strong><p>Bolsa Família reformulado, Regra de Proteção, MCMV retomado, Novo PAC, Pé-de-Meia, Desenrola e salário-mínimo valorizado.</p></div>
+          <div class="milestone"><strong>O limite</strong><p>Pobreza, informalidade, concentração de renda e poder financeiro continuam. Defender avanços também é cobrar mais.</p></div>
+        </div>
+      </div>
+    </section>
+
+    <section id="duvidas" class="section">
+      <div class="wrap">
+        <div class="section-heading"><div class="eyebrow">Respostas diretas</div><h2>Dúvidas que merecem dados.</h2><p>A página não esconde críticas ao campo de Lula nem transforma o outro plano em caricatura.</p></div>
+        <div class="faq-grid">
+          <details><summary>Voto branco ou nulo anula a eleição?</summary><p>Não. Segundo o TSE, eles não entram na contagem dos votos válidos, não são transferidos para o vencedor e não anulam automaticamente uma eleição.</p></details>
+          <details><summary>Quem não vota impede alguém de ganhar?</summary><p>Não. A abstenção registra uma ausência, mas a eleição continua sendo decidida pelos votos válidos. Quem está obrigado a votar deve justificar ou regularizar a situação conforme as regras eleitorais.</p></details>
+          <details><summary>O Bolsa Família faz as pessoas pararem de trabalhar?</summary><p>As evidências não sustentam essa afirmação automática. Estudos da FGV, do FMI e do Banco Mundial registram participação de beneficiários no trabalho formal e renda do trabalho.</p></details>
+          <details><summary>Lula é perfeito para a classe trabalhadora?</summary><p>Não. Seu projeto é reformista e conciliatório. A conclusão desta comparação é mais modesta: <strong>entre os dois planos, Lula oferece menor risco e maior proteção coletiva para trabalhadores.</strong></p></details>
+          <details><summary>Flávio não tem nenhuma proposta útil?</summary><p>Tem propostas que podem ser úteis em situações específicas, como digitalização, qualificação, redução de filas e apoio a pequenos negócios. A crítica é à orientação geral de maior flexibilização e menor poder sindical.</p></details>
+          <details><summary>Flávio responde por tudo que o pai fez?</summary><p>Não. A página não faz imputação automática nem condenação por parentesco. O ponto é político: Flávio se apresenta como sucessor de um campo e de um legado. Por isso, o eleitor pode cobrar explicações sobre pandemia, fome, ambiente, transparência e instituições.</p></details>
+          <details><summary>Votar em Lula significa parar de cobrar?</summary><p>Não. Votar pode impedir um retrocesso; organização, sindicato e mobilização continuam necessários para cobrar salário, jornada menor, imposto progressivo e poder popular.</p></details>
+        </div>
+      </div>
+    </section>
+
+    <section class="closing section">
+      <div class="wrap closing-grid">
+        <div><div class="eyebrow">Uma escolha concreta</div><h2>Compare. Vote. Organize-se. Cobre.</h2><p>Se você vive do trabalho, Lula é a aposta mais segura entre os dois projetos para preservar e ampliar direitos — e apresenta o futuro mais coeso para construir indústria, ciência, serviços públicos, soberania e uma vida mais confortável.</p></div>
+        <div class="hero-actions"><a class="btn btn-primary" href="#fontes">Ver as fontes</a><a class="btn btn-ghost" href="#top">Voltar ao início</a></div>
+      </div>
+    </section>
+
+    <section id="fontes" class="sources section-tight">
+      <div class="wrap sources-grid">
+        <div><div class="eyebrow">Transparência</div><h2>Leia as fontes antes de compartilhar.</h2><p>Esta é uma comparação política fundamentada. Ela não trata promessa como entrega, correlação como causalidade ou opinião como fato.</p><div class="method"><p><strong>Nota metodológica:</strong> o dado de 85,18% é a participação de beneficiários no saldo líquido de empregos formais do período, não a proporção de beneficiários empregados. O dado de 62,71% do estudo da FGV/MDS se refere à participação de trabalhadores pardos dentro do saldo dos beneficiários.</p></div></div>
+        <ol class="source-list">
+          <li><a href="https://www.tse.jus.br/comunicacao/noticias/2026/Julho/voto-branco-x-voto-nulo-saiba-a-diferenca-de-acordo-com-o-glossario-eleitoral" target="_blank" rel="noopener">TSE — diferença entre voto branco e nulo.</a></li>
+          <li><a href="https://www.tse.jus.br/comunicacao/noticias/2022/Outubro/votos-em-branco-ou-nulos-nao-sao-transferidos-para-o-vencedor-nem-cancelam-uma-eleicao" target="_blank" rel="noopener">TSE — votos brancos e nulos não anulam a eleição.</a></li>
+          <li><a href="https://www.gov.br/mds/pt-br/noticias/beneficiarios-do-bolsa-familia-garantem-85-dos-novos-empregos-formais-gerados-no-brasil" target="_blank" rel="noopener">MDS/FGV — Bolsa Família e emprego formal, 2023–2026.</a></li>
+          <li><a href="https://portal.fgv.br/noticias/estudo-da-fgv-sobre-o-bolsa-familia-revela-quebra-de-ciclo-da-pobreza-intergeracional" target="_blank" rel="noopener">FGV — trajetória de beneficiários e mobilidade social.</a></li>
+          <li><a href="https://www.elibrary.imf.org/view/journals/001/2020/099/article-A001-en.xml" target="_blank" rel="noopener">FMI — programas sociais e emprego formal no Brasil.</a></li>
+          <li><a href="https://documents1.worldbank.org/curated/en/099041823131543914/pdf/P1748360cee5150e30857b06a0e80ada814.pdf" target="_blank" rel="noopener">Banco Mundial — proteção social no Brasil.</a></li>
+          <li><a href="https://www.gov.br/mds/pt-br/acoes-e-programas/bolsa-familia/regra-de-protecao" target="_blank" rel="noopener">MDS — Regra de Proteção do Bolsa Família.</a></li>
+          <li><a href="https://www.gov.br/cidades/pt-br/acesso-a-informacao/acoes-e-programas/habitacao/programa-minha-casa-minha-vida/sobre-o-minha-casa-minha-vida-1" target="_blank" rel="noopener">Ministério das Cidades — Minha Casa Minha Vida.</a></li>
+          <li><a href="https://www12.senado.gov.br/noticias/materias/2014/12/30/os-avancos-e-as-crises-do-primeiro-mandato-de-dilma-rousseff" target="_blank" rel="noopener">Senado — avanços e crises do primeiro governo Dilma.</a></li>
+          <li><a href="https://www.imf.org/-/media/files/publications/fiscal-monitor/2026/april/english/text.pdf" target="_blank" rel="noopener">FMI — dívida, investimento e política fiscal.</a></li>
+          <li><a href="https://publications.iadb.org/publications/english/document/Public-Investment-and-Fiscal-Crisis-in-Brazil-Finding-Culprits-and-Solutions.pdf" target="_blank" rel="noopener">BID — investimento público e crise fiscal no Brasil.</a></li>
+          <li><a href="https://www.scielo.br/j/se/a/SBB8dPg9F33nNT3TP4T6drH/?lang=pt" target="_blank" rel="noopener">SciELO — significados de branco e nulo entre jovens.</a></li>
+          <li><a href="https://portal.stf.jus.br/noticias/verNoticiaDetalhe.asp?idConteudo=499330" target="_blank" rel="noopener">STF — emendas de relator e orçamento secreto.</a></li>
+          <li><a href="https://www.mprj.mp.br/" target="_blank" rel="noopener">MPRJ — investigação das rachadinhas e Operação Anjo.</a></li>
+          <li><a href="https://portal.stf.jus.br/noticias/verNoticiaDetalhe.asp?idConteudo=477496" target="_blank" rel="noopener">STF — RIFs do COAF no caso Flávio Bolsonaro.</a></li>
+          <li><a href="https://agenciadenoticias.ibge.gov.br/agencia-noticias/2012-agencia-de-noticias/noticias/35687-em-2021-pobreza-tem-aumento-recorde-e-atinge-62-5-milhoes-de-pessoas-maior-nivel-desde-2012" target="_blank" rel="noopener">IBGE — pobreza e extrema pobreza em 2021.</a></li>
+          <li><a href="https://www.gov.br/saude/pt-br/coronavirus" target="_blank" rel="noopener">Ministério da Saúde — dados da Covid-19.</a></li>
+          <li><a href="https://sites.tcu.gov.br/relatorio-de-politicas/2022/enfrentamento-a-covid-19.html" target="_blank" rel="noopener">TCU — acompanhamento do enfrentamento à Covid-19.</a></li>
+          <li><a href="https://olheparaafome.com.br/" target="_blank" rel="noopener">Rede PENSSAN — insegurança alimentar.</a></li>
+          <li><a href="https://legis.senado.leg.br/comissoes/comissao?codcol=2441" target="_blank" rel="noopener">Senado — CPI da Pandemia.</a></li>
+          <li><a href="https://portal.stf.jus.br/" target="_blank" rel="noopener">STF — decisões e investigações institucionais relacionadas ao período.</a></li>
+          <li><a href="https://www.gov.br/inpe/pt-br/assuntos/ultimas-noticias" target="_blank" rel="noopener">INPE — PRODES e desmatamento da Amazônia.</a></li>
+          <li><a href="https://www.planalto.gov.br/ccivil_03/constituicao/emendas/emc/emc103.htm" target="_blank" rel="noopener">Planalto — Emenda Constitucional 103/2019.</a></li>
+          <li><a href="https://www.planalto.gov.br/ccivil_03/constituicao/emendas/emc/emc95.htm" target="_blank" rel="noopener">Planalto — Emenda Constitucional 95/2016, teto de gastos.</a></li>
+          <li><a href="https://www12.senado.leg.br/noticias/materias/2022/11/21/teto-de-gastos-provocou-queda-de-recursos-para-educacao-apontam-especialistas" target="_blank" rel="noopener">Agência Senado — efeitos do teto sobre a educação.</a></li>
+          <li><a href="https://www.planalto.gov.br/ccivil_03/_ato2015-2018/2017/lei/l13467.htm" target="_blank" rel="noopener">Planalto — Lei 13.467/2017, Reforma Trabalhista.</a></li>
+          <li><a href="https://www.planalto.gov.br/ccivil_03/_ato2015-2018/2018/lei/l13756.htm" target="_blank" rel="noopener">Planalto — Lei 13.756/2018, apostas de quota fixa.</a></li>
+          <li><a href="https://www.planalto.gov.br/ccivil_03/_ato2023-2026/2023/lei/l14790.htm" target="_blank" rel="noopener">Planalto — Lei 14.790/2023, regulação das bets.</a></li>
+          <li><a href="https://www.gov.br/fazenda/pt-br/composicao/orgaos/secretaria-de-premios-e-apostas/apostas-de-quota-fixa" target="_blank" rel="noopener">Ministério da Fazenda — autorização e fiscalização das bets.</a></li>
+          <li><a href="https://g1.globo.com/ms/mato-grosso-do-sul/noticia/2026/09/25/pix-traficante-policial-sistema-inteligencia-desvio-cocaina-ms-policiais-operacao-infiltrados.ghtml" target="_blank" rel="noopener">G1/MPMS — Operação Infiltrados.</a></li>
+          <li><a href="https://agenciabrasil.ebc.com.br/justica/noticia/2026-01/policia-federal-faz-nova-operacao-contra-o-banco-master" target="_blank" rel="noopener">Agência Brasil — Operação Compliance Zero e Banco Master.</a></li>
+          <li><a href="https://www.tse.jus.br/urna-eletronica" target="_blank" rel="noopener">TSE — segurança das urnas eletrônicas.</a></li>
+        </ol>
+      </div>
+    </section>
+  </main>
+
+  <footer class="wrap footer"><span>Voto / Futuro · conteúdo político de comparação e opinião fundamentada</span><span><a href="#fontes">Fontes</a> · <a href="#top">Início</a></span></footer>
+  <script>
+    const toggle = document.querySelector('.nav-toggle');
+    const nav = document.querySelector('#nav-links');
+    toggle?.addEventListener('click', () => {
+      const open = nav.classList.toggle('is-open');
+      toggle.setAttribute('aria-expanded', String(open));
+      toggle.setAttribute('aria-label', open ? 'Fechar menu' : 'Abrir menu');
+      document.body.classList.toggle('menu-open', open);
+    });
+    nav?.querySelectorAll('a').forEach(link => link.addEventListener('click', () => {
+      nav.classList.remove('is-open');
+      toggle?.setAttribute('aria-expanded', 'false');
+      toggle?.setAttribute('aria-label', 'Abrir menu');
+      document.body.classList.remove('menu-open');
+    }));
+  </script>
+</body>
+</html>

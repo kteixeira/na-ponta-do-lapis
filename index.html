@@ -493,6 +493,9 @@
         align-items: stretch;
         gap: 18px;
       }
+      #democracia {
+        grid-column: 1 / -1;
+      }
       .compare-card {
         display: flex;
         flex-direction: column;
@@ -807,6 +810,139 @@
       }
       .side strong {
         color: var(--ink);
+      }
+
+      @media (min-width: 901px) {
+        .compare-grid {
+          grid-auto-rows: auto;
+          align-items: start;
+        }
+        .compare-card {
+          height: auto;
+          min-height: 0;
+        }
+        .compare-card-head {
+          min-height: 104px;
+          box-sizing: border-box;
+          align-items: flex-start;
+        }
+        .compare-card-head > div:nth-child(2) {
+          display: flex;
+          min-height: 55px;
+          flex-direction: column;
+          justify-content: center;
+        }
+        .side-by-side {
+          position: relative;
+          flex: 0 0 auto;
+          grid-template-rows: auto auto auto auto auto;
+          align-content: start;
+          background: linear-gradient(
+            to right,
+            #e6eff5 0%,
+            #e6eff5 50%,
+            #eee8f1 50%,
+            #eee8f1 100%
+          );
+        }
+        .side {
+          display: contents;
+          height: auto;
+          min-height: 0;
+        }
+        .side > * {
+          min-width: 0;
+        }
+        .side-lula > * {
+          grid-column: 1;
+        }
+        .side-flavio > * {
+          grid-column: 2;
+        }
+        .side > .side-label {
+          grid-row: 1;
+          align-self: start;
+          justify-self: start;
+          margin: 22px 22px 12px;
+        }
+        .side > h4 {
+          grid-row: 2;
+          align-self: start;
+          margin: 0 22px 9px;
+        }
+        .side > .side-block {
+          align-self: stretch;
+          margin: 0 22px;
+          padding: 16px 0 22px;
+        }
+        .side > .side-block:nth-of-type(1) {
+          grid-row: 3;
+          padding-top: 0;
+        }
+        .side > .side-block:nth-of-type(2) {
+          grid-row: 4;
+        }
+        .side > .side-block:nth-of-type(3) {
+          grid-row: 5;
+        }
+        .side > .side-block + .side-block {
+          margin-top: 0;
+          border-top: 1px solid rgba(22, 32, 51, 0.14);
+        }
+      }
+
+      .card-summary > span,
+      .side-block h5 {
+        color: var(--coral);
+        font: 800 10px/1.2 var(--sans);
+        letter-spacing: 0.11em;
+        text-transform: uppercase;
+      }
+      .side-block + .side-block {
+        margin-top: 18px;
+        padding-top: 16px;
+        border-top: 1px solid rgba(22, 32, 51, 0.14);
+      }
+      .side-block h5 {
+        margin: 0 0 8px;
+        color: var(--ink);
+      }
+      .side-block p {
+        font-size: 15px;
+        line-height: 1.48;
+      }
+      .side-list {
+        display: grid;
+        gap: 7px;
+        margin: 0;
+        padding-left: 18px;
+        color: var(--ink-soft);
+        font-size: 15px;
+        line-height: 1.42;
+      }
+      .side-list li::marker {
+        color: var(--coral);
+      }
+      .card-summary {
+        display: grid;
+        gap: 7px;
+        padding: 18px 25px;
+        border-top: 1px solid var(--line);
+        background: #fffefa;
+      }
+      .card-summary p {
+        margin: 0;
+        color: var(--ink);
+        font: 700 15px/1.45 var(--sans);
+      }
+      .card-summary .summary-line + .summary-line {
+        margin-top: 4px;
+        padding-top: 10px;
+        border-top: 1px solid var(--line);
+      }
+      .card-summary .summary-line strong {
+        color: var(--ink);
+        font-weight: 900;
       }
       .local-source {
         margin-top: 0;
@@ -1309,6 +1445,9 @@
         .compare-grid {
           grid-template-columns: 1fr;
         }
+        .side-by-side {
+          grid-template-rows: none;
+        }
         .hero-grid {
           padding-top: 54px;
         }
@@ -1448,6 +1587,13 @@
         .compare-card-sub {
           padding: 0 20px 19px;
         }
+        .card-summary {
+          padding: 17px 20px;
+        }
+        .side-block + .side-block {
+          margin-top: 16px;
+          padding-top: 14px;
+        }
         .side {
           padding: 19px 20px;
         }
@@ -1525,7 +1671,7 @@
         <nav id="nav-links" class="nav-links" aria-label="Navegação principal">
           <a href="#explore">Explorar ideias</a><a href="#comparar">Comparar</a
           ><a href="#futuro">Futuro</a><a href="#legado">Legados</a
-          ><a href="#fontes">Fontes</a
+          ><a href="#democracia">Democracia</a><a href="#fontes">Fontes</a
           ><button
             id="share-header"
             class="nav-share"
@@ -1560,7 +1706,7 @@
               <em>Como as coisas ficam na sua vida.</em>
             </h1>
             <p class="hero-copy">
-              <strong>Na Ponta do Lápis</strong> descomplica. Sem juridiquês ou promessa vazia: você
+              Aqui a gente descomplica. Sem juridiquês ou promessa vazia: você
               vê o que cada lado propõe e como isso mexe de verdade no seu
               bolso, no seu dia a dia e na sua família.
             </p>
@@ -1597,7 +1743,7 @@
               <h2>Vai direto ao assunto:</h2>
             </div>
             <p>
-              Escolha o que mais mexe com você. <strong>Na Ponta do Lápis</strong> te conta como a situação
+              Escolha o que mais mexe com você. A gente te conta como a situação
               está hoje, o que cada candidato diz e o que muda na sua rotina.
             </p>
           </div>
@@ -1695,6 +1841,17 @@
                 />
                 <path d="M8 14h8" /></svg
               >Ciência e tecnologia</a
+            ><a class="topic-link" href="#democracia"
+              ><svg
+                aria-hidden="true"
+                viewBox="0 0 24 24"
+                fill="none"
+                stroke="currentColor"
+                stroke-width="2"
+              >
+                <path d="M4 5h16v14H4z" />
+                <path d="M8 9h8M8 13h6M8 17h4" /></svg
+              >Democracia e voto</a
             ><a class="topic-link" href="#conclusao"
               ><svg
                 aria-hidden="true"
@@ -1729,635 +1886,1170 @@
               <div class="eyebrow">Dois caminhos</div>
               <h2>Vamos ver o que pode mudar no seu dia a dia.</h2>
               <p>
-                Cada cartão responde quatro perguntas: o que está acontecendo,
-                quem decidiu, o que pode mudar para quem trabalha e onde
-                conferir. Quando for promessa, <strong>Na Ponta do Lápis</strong> avisa. Quando já
-                aconteceu, também.
+                Aqui você separa o que já aconteceu do que está sendo prometido,
+                entende os dois caminhos e confere as fontes antes de tirar sua
+                conclusão.
               </p>
             </div>
           </div>
           <div class="compare-grid">
-            <article id="clt" class="compare-card">
-              <div class="card-visual visual-work" aria-hidden="true">
-                <span>Trabalho protegido</span
-                ><svg
-                  viewBox="0 0 96 78"
+            <article class="compare-card" id="clt">
+              <div aria-hidden="true" class="card-visual visual-work">
+                <span>Trabalho protegido</span>
+                <svg
                   fill="none"
                   stroke="currentColor"
                   stroke-width="2"
+                  viewbox="0 0 96 78"
                 >
-                  <rect x="19" y="23" width="58" height="39" rx="5" />
+                  <rect height="39" rx="5" width="58" x="19" y="23"></rect>
                   <path
                     d="M34 23v-7a5 5 0 0 1 5-5h18a5 5 0 0 1 5 5v7M19 38h58M40 38v7h16v-7"
-                  />
-                  <path d="M28 53h10M58 53h10" />
+                  ></path>
+                  <path d="M28 53h10M58 53h10"></path>
                 </svg>
               </div>
               <div class="compare-card-head">
                 <div class="topic-icon">
                   <svg
                     aria-hidden="true"
-                    viewBox="0 0 24 24"
                     fill="none"
                     stroke="currentColor"
                     stroke-width="2"
+                    viewbox="0 0 24 24"
                   >
-                    <rect x="3" y="7" width="18" height="13" rx="2" />
-                    <path d="M8 7V5a2 2 0 0 1 2-2h4a2 2 0 0 1 2 2v2M3 12h18" />
+                    <rect height="13" rx="2" width="18" x="3" y="7"></rect>
+                    <path
+                      d="M8 7V5a2 2 0 0 1 2-2h4a2 2 0 0 1 2 2v2M3 12h18"
+                    ></path>
                   </svg>
                 </div>
                 <div>
-                  <div class="eyebrow">Trabalho</div>
-                  <h3>CLT e salário</h3>
+                  <div class="eyebrow">Trabalho e renda</div>
+                  <h3>
+                    Quando o dinheiro acaba antes do mês, qual caminho protege
+                    mais quem trabalha?
+                  </h3>
                 </div>
               </div>
-              <p class="compare-card-sub">
-                Se algo der errado, você ficar doente ou precisar fazer hora
-                extra, Quem fica do seu lado para garantir seus direitos?
-              </p>
               <div class="side-by-side">
-                <div class="side side-lula">
+                <div
+                  class="side side-lula"
+                  data-story="Propõe salário mínimo acima dos preços e mais proteção para quem trabalha."
+                >
                   <span class="side-label">Lula</span>
-                  <h4>Mais proteção e renda</h4>
-                  <p>
-                    Mais proteção para quem trabalha. A ideia é ter salário
-                    mínimo aumentando mais que os preços e mais garantias,
-                    inclusive para quem trabalha nos aplicativos. O foco é
-                    aumentar a renda e a segurança de quem trabalha, mas isso
-                    ainda precisa passar pelo Congresso.
-                  </p>
+                  <h4>Mais proteção para quem trabalha</h4>
+                  <div class="side-block">
+                    <h5>O caminho proposto</h5>
+                    <ul class="side-list">
+                      <li>Aumentar o salário mínimo acima dos preços.</li>
+                      <li>
+                        Criar garantias para quem trabalha por aplicativo.
+                      </li>
+                    </ul>
+                  </div>
+                  <div class="side-block">
+                    <h5>Na vida real</h5>
+                    <p>
+                      O salário pode comprar mais e a pessoa pode ter mais
+                      segurança em caso de doença, acidente ou perda de renda.
+                    </p>
+                  </div>
+                  <div class="side-block side-depends">
+                    <h5>O que ainda depende</h5>
+                    <p>
+                      O aumento depende das decisões sobre preços, dinheiro
+                      público e salários. As regras para aplicativos ainda
+                      precisam passar pelo Congresso.
+                    </p>
+                  </div>
                 </div>
-                <div class="side side-flavio">
+                <div
+                  class="side side-flavio"
+                  data-story="Aposta em menos regras para facilitar a contratação, com risco de deixar o trabalhador mais exposto."
+                >
                   <span class="side-label">Flávio</span>
-                  <h4>Mais flexibilidade para contratar</h4>
-                  <p>
-                    Menos regras para contratar. A aposta é cortar imposto e
-                    facilitar a contratação para gerar emprego mais rápido. Isso
-                    dá mais liberdade para os patrões, mas pode deixar quem
-                    trabalha sem proteção se não houver uma rede de segurança.
-                  </p>
+                  <h4>Facilitar a contratação</h4>
+                  <div class="side-block">
+                    <h5>O caminho proposto</h5>
+                    <ul class="side-list">
+                      <li>
+                        Diminuir regras e impostos para facilitar contratações.
+                      </li>
+                      <li>
+                        Dar mais espaço para empresa e trabalhador negociarem.
+                      </li>
+                    </ul>
+                  </div>
+                  <div class="side-block">
+                    <h5>Na vida real</h5>
+                    <p>
+                      A empresa pode contratar com mais facilidade. Sem
+                      garantias claras, quem trabalha pode ficar com salário
+                      menor e menos proteção.
+                    </p>
+                  </div>
+                  <div class="side-block side-depends">
+                    <h5>O que ainda depende</h5>
+                    <p>
+                      É preciso saber quais direitos continuariam garantidos e
+                      como evitar que menos regras virem apenas custo menor para
+                      a empresa.
+                    </p>
+                  </div>
                 </div>
+              </div>
+              <div class="card-summary">
+                <span>Em uma frase</span>
+                <p class="summary-line summary-lula">
+                  <strong>Lula:</strong> Propõe salário mínimo acima dos preços
+                  e mais proteção para quem trabalha.
+                </p>
+                <p class="summary-line summary-flavio">
+                  <strong>Flávio:</strong> Aposta em menos regras para facilitar
+                  a contratação, com risco de deixar o trabalhador mais exposto.
+                </p>
               </div>
               <div class="local-source">
                 Fonte do contexto:
                 <a
                   href="https://www.planalto.gov.br/ccivil_03/constituicao/emendas/emc/emc103.htm"
-                  target="_blank"
                   rel="noopener"
+                  target="_blank"
                   >EC 103/2019</a
                 >
                 e
                 <a
                   href="https://www.planalto.gov.br/ccivil_03/_ato2015-2018/2017/lei/l13467.htm"
-                  target="_blank"
                   rel="noopener"
+                  target="_blank"
                   >Lei 13.467/2017</a
                 >.
               </div>
             </article>
-            <article id="bolsa" class="compare-card">
-              <div class="card-visual visual-money" aria-hidden="true">
-                <span>Renda no prato</span
-                ><svg
-                  viewBox="0 0 96 78"
+            <article class="compare-card" id="bolsa">
+              <div aria-hidden="true" class="card-visual visual-money">
+                <span>Renda no prato</span>
+                <svg
                   fill="none"
                   stroke="currentColor"
                   stroke-width="2"
+                  viewbox="0 0 96 78"
                 >
-                  <circle cx="48" cy="42" r="25" />
-                  <circle cx="48" cy="42" r="17" />
-                  <path d="M36 40c4-7 8 7 12 0s8 7 12 0M24 17h48M31 11h34" />
+                  <circle cx="48" cy="42" r="25"></circle>
+                  <circle cx="48" cy="42" r="17"></circle>
+                  <path
+                    d="M36 40c4-7 8 7 12 0s8 7 12 0M24 17h48M31 11h34"
+                  ></path>
                 </svg>
               </div>
               <div class="compare-card-head">
                 <div class="topic-icon">
                   <svg
                     aria-hidden="true"
-                    viewBox="0 0 24 24"
                     fill="none"
                     stroke="currentColor"
                     stroke-width="2"
+                    viewbox="0 0 24 24"
                   >
-                    <path d="M3 10h18M5 10v9M19 10v9M3 19h18M12 3v7M8 6h8" />
+                    <path
+                      d="M3 10h18M5 10v9M19 10v9M3 19h18M12 3v7M8 6h8"
+                    ></path>
                   </svg>
                 </div>
                 <div>
-                  <div class="eyebrow">Renda</div>
-                  <h3>Bolsa Família</h3>
+                  <div class="eyebrow">Renda e comida</div>
+                  <h3>
+                    Quando a renda aperta, o que ajuda a família a atravessar o
+                    mês?
+                  </h3>
                 </div>
               </div>
-              <p class="compare-card-sub">
-                O aperto chegou? Uma renda mínima salva a compra do mês e ajuda
-                a família a respirar sem desespero.
-              </p>
               <div class="side-by-side">
-                <div class="side side-lula">
+                <div
+                  class="side side-lula"
+                  data-story="Combina renda mínima com tempo para a família se firmar no trabalho."
+                >
                   <span class="side-label">Lula</span>
-                  <h4>Bolsa Família + Regra de Proteção</h4>
-                  <p>
-                    Bolsa Família + Proteção. Garante o básico e tem a “Regra de
-                    Proteção”, que evita que a pessoa perca o benefício inteiro
-                    logo no primeiro mês de carteira assinada. Reduz o medo de
-                    aceitar um emprego e, de repente, ficar sem nada.
-                  </p>
+                  <h4>Ajuda sem perder tudo ao trabalhar</h4>
+                  <div class="side-block">
+                    <h5>O caminho proposto</h5>
+                    <ul class="side-list">
+                      <li>Manter o Bolsa Família e a Regra de Proteção.</li>
+                      <li>
+                        Dar tempo para a renda do trabalho começar a crescer.
+                      </li>
+                    </ul>
+                  </div>
+                  <div class="side-block">
+                    <h5>Na vida real</h5>
+                    <p>
+                      A família pode aceitar um emprego e continuar recebendo
+                      parte do benefício enquanto o novo salário ainda não paga
+                      todas as contas.
+                    </p>
+                  </div>
+                  <div class="side-block side-depends">
+                    <h5>O que ainda depende</h5>
+                    <p>
+                      O cadastro precisa estar certo, o dinheiro precisa
+                      continuar disponível e as regras precisam ser
+                      acompanhadas.
+                    </p>
+                  </div>
                 </div>
-                <div class="side side-flavio">
+                <div
+                  class="side side-flavio"
+                  data-story="Confia mais no mercado para gerar renda e oferece menos ajuda direta a quem está no aperto."
+                >
                   <span class="side-label">Flávio</span>
-                  <h4>Foco em corte de impostos</h4>
-                  <p>
-                    Aposta no mercado livre. O plano foca em diminuir o Estado e
-                    cortar impostos. A ideia é que os preços caiam e que a
-                    economia funcione mais por conta própria. Mas para quem está
-                    sem comida hoje, essa aposta pode demorar a resolver o
-                    problema.
-                  </p>
+                  <h4>Esperar que o emprego resolva</h4>
+                  <div class="side-block">
+                    <h5>O caminho proposto</h5>
+                    <ul class="side-list">
+                      <li>Diminuir impostos e reduzir a presença do Estado.</li>
+                      <li>
+                        Esperar que a economia gere renda por conta própria.
+                      </li>
+                    </ul>
+                  </div>
+                  <div class="side-block">
+                    <h5>Na vida real</h5>
+                    <p>
+                      Isso pode ajudar quem já tem renda ou negócio. Para quem
+                      está sem comida, o alívio pode demorar e não há renda
+                      imediata garantida.
+                    </p>
+                  </div>
+                  <div class="side-block side-depends">
+                    <h5>O que ainda depende</h5>
+                    <p>
+                      É preciso explicar como a família de baixa renda seria
+                      protegida enquanto o emprego ou a renda não chegam.
+                    </p>
+                  </div>
                 </div>
+              </div>
+              <div class="card-summary">
+                <span>Em uma frase</span>
+                <p class="summary-line summary-lula">
+                  <strong>Lula:</strong> Combina renda mínima com tempo para a
+                  família se firmar no trabalho.
+                </p>
+                <p class="summary-line summary-flavio">
+                  <strong>Flávio:</strong> Confia mais no mercado para gerar
+                  renda e oferece menos ajuda direta para quem está no aperto.
+                </p>
               </div>
               <div class="local-source">
-                Fonte específica:
+                Fonte do contexto:
                 <a
-                  href="https://www.gov.br/mds/pt-br/noticias/beneficiarios-do-bolsa-familia-garantem-85-dos-novos-empregos-formais-gerados-no-brasil"
-                  target="_blank"
+                  href="https://www.gov.br/mds/pt-br/acoes-e-programas/bolsa-familia/regra-de-protecao"
                   rel="noopener"
-                  >MDS/FGV — emprego formal</a
+                  target="_blank"
+                  >Regra de Proteção</a
                 >
                 e
                 <a
-                  href="https://www.gov.br/mds/pt-br/acoes-e-programas/bolsa-familia/regra-de-protecao"
-                  target="_blank"
+                  href="https://www.gov.br/mds/pt-br/noticias/beneficiarios-do-bolsa-familia-garantem-85-dos-novos-empregos-formais-gerados-no-brasil"
                   rel="noopener"
-                  >Regra de Proteção</a
+                  target="_blank"
+                  >MDS/FGV</a
                 >.
               </div>
             </article>
-            <article id="saude" class="compare-card">
-              <div class="card-visual visual-health" aria-hidden="true">
-                <span>Cuidado perto</span
-                ><svg
-                  viewBox="0 0 96 78"
+            <article class="compare-card" id="saude">
+              <div aria-hidden="true" class="card-visual visual-health">
+                <span>Cuidado perto</span>
+                <svg
                   fill="none"
                   stroke="currentColor"
                   stroke-width="2"
+                  viewbox="0 0 96 78"
                 >
                   <path
                     d="M48 65S20 49 20 29c0-9 12-14 20-5 8-9 20-4 20 5 0 20-12 28-12 28Z"
-                  />
-                  <path d="M48 27v18M39 36h18" />
-                  <path d="M70 56h14M77 49v14" />
+                  ></path>
+                  <path d="M48 27v18M39 36h18M70 56h14M77 49v14"></path>
                 </svg>
               </div>
               <div class="compare-card-head">
                 <div class="topic-icon">
                   <svg
                     aria-hidden="true"
-                    viewBox="0 0 24 24"
                     fill="none"
                     stroke="currentColor"
                     stroke-width="2"
+                    viewbox="0 0 24 24"
                   >
                     <path
                       d="M12 21s-8-4.6-8-11a4.5 4.5 0 0 1 8-2.8A4.5 4.5 0 0 1 20 10c0 6.4-8 11-8 11Z"
-                    />
-                    <path d="M12 8v6M9 11h6" />
+                    ></path>
+                    <path d="M12 8v6M9 11h6"></path>
                   </svg>
                 </div>
                 <div>
                   <div class="eyebrow">Serviço público</div>
-                  <h3>Saúde</h3>
+                  <h3>
+                    Quando alguém adoece, a família consegue se tratar sem
+                    entrar em dívida?
+                  </h3>
                 </div>
               </div>
-              <p class="compare-card-sub">
-                Quando a consulta ou o remédio pesa no bolso, o SUS pode evitar
-                que a família escolha entre se tratar e pagar as contas.
-              </p>
               <div class="side-by-side">
-                <div class="side side-lula">
+                <div
+                  class="side side-lula"
+                  data-story="Aposta no SUS, no atendimento perto de casa e em remédios mais acessíveis."
+                >
                   <span class="side-label">Lula</span>
-                  <h4>SUS forte e programas conhecidos</h4>
-                  <p>
-                    O caminho inclui Mais Médicos, Farmácia Popular, vacinação e
-                    atendimento básico nos postos de saúde. A decisão é garantir
-                    um atendimento público que não pare. Para quem trabalha,
-                    isso pode significar consulta perto de casa, remédio
-                    acessível e menos dívida quando alguém da família adoece. Os
-                    documentos do Ministério da Saúde mostram como esses
-                    programas funcionam.
-                  </p>
+                  <h4>SUS forte e atendimento perto</h4>
+                  <div class="side-block">
+                    <h5>O caminho proposto</h5>
+                    <ul class="side-list">
+                      <li>Fortalecer o SUS, os postos e a vacinação.</li>
+                      <li>Manter Mais Médicos e Farmácia Popular.</li>
+                    </ul>
+                  </div>
+                  <div class="side-block">
+                    <h5>Na vida real</h5>
+                    <p>
+                      Consulta perto e remédio acessível podem evitar que uma
+                      doença vire dívida ou faça a pessoa faltar ao trabalho.
+                    </p>
+                  </div>
+                  <div class="side-block side-depends">
+                    <h5>O que ainda depende</h5>
+                    <p>
+                      O atendimento precisa de dinheiro, profissionais,
+                      organização nas cidades e continuidade dos programas.
+                    </p>
+                  </div>
                 </div>
-                <div class="side side-flavio">
+                <div
+                  class="side side-flavio"
+                  data-story="Fala em gestão, tecnologia e mais parcerias com empresas no atendimento."
+                >
                   <span class="side-label">Flávio</span>
-                  <h4>Administração melhor e empresas privadas</h4>
-                  <p>
-                    O plano fala em reduzir filas com tecnologia, parcerias e
-                    uma administração mais organizada. O ponto é garantir que
-                    “fazer funcionar melhor” não vire dependência de serviço
-                    privado. Para quem não pode pagar, a pergunta é direta: o
-                    atendimento continuará disponível quando a solução privada
-                    não for uma opção?
-                  </p>
+                  <h4>Mais tecnologia e empresas</h4>
+                  <div class="side-block">
+                    <h5>O caminho proposto</h5>
+                    <ul class="side-list">
+                      <li>Usar tecnologia para reduzir filas.</li>
+                      <li>Ampliar parcerias privadas no atendimento.</li>
+                    </ul>
+                  </div>
+                  <div class="side-block">
+                    <h5>Na vida real</h5>
+                    <p>
+                      As parcerias podem acelerar alguns atendimentos. Para quem
+                      não pode pagar, a proteção depende de o serviço público
+                      continuar disponível.
+                    </p>
+                  </div>
+                  <div class="side-block side-depends">
+                    <h5>O que ainda depende</h5>
+                    <p>
+                      É preciso mostrar como a proposta evitaria que a pessoa
+                      dependa de clínicas que não consegue pagar.
+                    </p>
+                  </div>
                 </div>
+              </div>
+              <div class="card-summary">
+                <span>Em uma frase</span>
+                <p class="summary-line summary-lula">
+                  <strong>Lula:</strong> Aposta no SUS, no atendimento perto de
+                  casa e em remédios mais acessíveis.
+                </p>
+                <p class="summary-line summary-flavio">
+                  <strong>Flávio:</strong> Fala em gestão, tecnologia e mais
+                  parcerias com empresas no atendimento.
+                </p>
               </div>
               <div class="local-source">
-                Fonte específica:
+                Fonte do contexto:
                 <a
                   href="https://www.gov.br/saude/pt-br/composicao/sgtes/mais-medicos"
-                  target="_blank"
                   rel="noopener"
-                  >Ministério da Saúde — Mais Médicos</a
+                  target="_blank"
+                  >Mais Médicos</a
                 >
                 e
                 <a
                   href="https://www.gov.br/saude/pt-br/assuntos/saude-de-a-a-z/f/farmacia-popular"
-                  target="_blank"
                   rel="noopener"
+                  target="_blank"
                   >Farmácia Popular</a
                 >.
               </div>
             </article>
-            <article id="seguranca" class="compare-card">
-              <div class="card-visual visual-safety" aria-hidden="true">
-                <span>Comunidade segura</span
-                ><svg
-                  viewBox="0 0 96 78"
+            <article class="compare-card" id="seguranca">
+              <div aria-hidden="true" class="card-visual visual-safety">
+                <span>Comunidade segura</span>
+                <svg
                   fill="none"
                   stroke="currentColor"
                   stroke-width="2"
+                  viewbox="0 0 96 78"
                 >
                   <path
                     d="m48 10 26 10v16c0 17-10 27-26 33-16-6-26-16-26-33V20l26-10Z"
-                  />
-                  <path d="m35 39 9 9 18-19" />
-                  <path d="M9 68h78" />
+                  ></path>
+                  <path d="m35 39 9 9 18-19M9 68h78"></path>
                 </svg>
               </div>
               <div class="compare-card-head">
                 <div class="topic-icon">
                   <svg
                     aria-hidden="true"
-                    viewBox="0 0 24 24"
                     fill="none"
                     stroke="currentColor"
                     stroke-width="2"
+                    viewbox="0 0 24 24"
                   >
                     <path
                       d="M12 3 20 6v5c0 5-3.2 8.3-8 10-4.8-1.7-8-5-8-10V6l8-3Z"
-                    />
-                    <path d="m9 12 2 2 4-4" />
+                    ></path>
+                    <path d="m9 12 2 2 4-4"></path>
                   </svg>
                 </div>
                 <div>
-                  <div class="eyebrow">Proteção</div>
-                  <h3>Segurança pública</h3>
+                  <div class="eyebrow">Proteção no bairro</div>
+                  <h3>
+                    Como voltar do trabalho em paz sem deixar o crime mandar na
+                    comunidade?
+                  </h3>
                 </div>
               </div>
-              <p class="compare-card-sub">
-                É sobre conseguir ir e voltar do trabalho em paz, sem que o
-                crime mande no seu bairro.
-              </p>
               <div class="side-by-side">
-                <div class="side side-lula">
+                <div
+                  class="side side-lula"
+                  data-story="Foca investigação e trabalho conjunto contra o dinheiro dos grupos criminosos."
+                >
                   <span class="side-label">Lula</span>
-                  <h4>Inteligência e ação coordenada</h4>
-                  <p>
-                    Foca em cortar o dinheiro das facções e fazer as polícias
-                    trabalharem juntas. A ideia é atacar quem financia o crime,
-                    em vez de só focar no confronto de rua, tentando recuperar a
-                    paz nas periferias usando mais investigação.
-                  </p>
+                  <h4>Investigar e trabalhar em conjunto</h4>
+                  <div class="side-block">
+                    <h5>O caminho proposto</h5>
+                    <ul class="side-list">
+                      <li>
+                        Cortar o dinheiro dos grupos que financiam o crime.
+                      </li>
+                      <li>
+                        Fazer as polícias trabalharem juntas e investigar mais.
+                      </li>
+                    </ul>
+                  </div>
+                  <div class="side-block">
+                    <h5>Na vida real</h5>
+                    <p>
+                      Atacar quem financia o crime pode diminuir o poder das
+                      facções e evitar que a única resposta seja mais confronto
+                      nas ruas.
+                    </p>
+                  </div>
+                  <div class="side-block side-depends">
+                    <h5>O que ainda depende</h5>
+                    <p>
+                      O resultado depende da união entre governos, polícias,
+                      Justiça e políticas para os bairros mais expostos.
+                    </p>
+                  </div>
                 </div>
-                <div class="side side-flavio">
+                <div
+                  class="side side-flavio"
+                  data-story="Aposta em armas, penas maiores e mais liberdade para reagir ao crime."
+                >
                   <span class="side-label">Flávio</span>
-                  <h4>Mais armas e leis mais duras</h4>
-                  <p>
-                    Aposta em leis mais duras: penas mais pesadas, mais proteção
-                    jurídica para policiais e facilidade para o cidadão ter
-                    arma. A promessa é tolerância zero, mas levanta o debate se
-                    isso diminui o crime ou só aumenta o tiroteio.
-                  </p>
+                  <h4>Mais armas e penas maiores</h4>
+                  <div class="side-block">
+                    <h5>O caminho proposto</h5>
+                    <ul class="side-list">
+                      <li>Aumentar penas e proteger mais os policiais.</li>
+                      <li>
+                        Facilitar que mais pessoas tenham uma arma em casa.
+                      </li>
+                    </ul>
+                  </div>
+                  <div class="side-block">
+                    <h5>Na vida real</h5>
+                    <p>
+                      A promessa é aumentar o poder de reação. A dúvida é se
+                      mais armas reduzem o crime ou aumentam os tiroteios e os
+                      riscos.
+                    </p>
+                  </div>
+                  <div class="side-block side-depends">
+                    <h5>O que ainda depende</h5>
+                    <p>
+                      É preciso mostrar como evitar mais violência policial,
+                      circulação de armas e novos riscos para quem vive no
+                      bairro.
+                    </p>
+                  </div>
                 </div>
+              </div>
+              <div class="card-summary">
+                <span>Em uma frase</span>
+                <p class="summary-line summary-lula">
+                  <strong>Lula:</strong> Foca investigação e trabalho conjunto
+                  contra o dinheiro dos grupos criminosos.
+                </p>
+                <p class="summary-line summary-flavio">
+                  <strong>Flávio:</strong> Aposta em armas, penas maiores e mais
+                  liberdade para reagir ao crime.
+                </p>
               </div>
               <div class="local-source">
-                Fonte de referência:
+                Fonte do contexto:
                 <a
                   href="https://www.gov.br/mj/pt-br/assuntos/sua-seguranca/seguranca-publica"
-                  target="_blank"
                   rel="noopener"
+                  target="_blank"
                   >Ministério da Justiça — Segurança Pública</a
                 >.
               </div>
             </article>
-            <article id="moradia" class="compare-card">
-              <div class="card-visual visual-home" aria-hidden="true">
-                <span>Casa e cidade</span
-                ><svg
-                  viewBox="0 0 96 78"
+            <article class="compare-card" id="moradia">
+              <div aria-hidden="true" class="card-visual visual-home">
+                <span>Casa e cidade</span>
+                <svg
                   fill="none"
                   stroke="currentColor"
                   stroke-width="2"
+                  viewbox="0 0 96 78"
                 >
-                  <path d="m14 39 34-27 34 27" />
-                  <path d="M22 35v30h52V35M39 65V47h26v18" />
-                  <path d="M14 68h68" />
+                  <path d="m14 39 34-27 34 27"></path>
+                  <path d="M22 35v30h52V35M39 65V47h26v18M14 68h68"></path>
                 </svg>
               </div>
               <div class="compare-card-head">
                 <div class="topic-icon">
                   <svg
                     aria-hidden="true"
-                    viewBox="0 0 24 24"
                     fill="none"
                     stroke="currentColor"
                     stroke-width="2"
+                    viewbox="0 0 24 24"
                   >
-                    <path d="m3 11 9-8 9 8" />
-                    <path d="M5 10v10h14V10M9 20v-6h6v6" />
+                    <path d="m3 11 9-8 9 8"></path>
+                    <path d="M5 10v10h14V10M9 20v-6h6v6"></path>
                   </svg>
                 </div>
                 <div>
                   <div class="eyebrow">Casa e cidade</div>
-                  <h3>Moradia</h3>
+                  <h3>
+                    Moradia é só receber a chave ou também conseguir viver bem
+                    no lugar?
+                  </h3>
                 </div>
               </div>
-              <p class="compare-card-sub">
-                Moradia é mais que receber a chave: é ter financiamento,
-                transporte, saneamento e uma prestação que caiba no bolso.
-              </p>
               <div class="side-by-side">
-                <div class="side side-lula">
+                <div
+                  class="side side-lula"
+                  data-story="Combina moradia com saneamento, transporte e outras obras públicas."
+                >
                   <span class="side-label">Lula</span>
-                  <h4>Minha Casa, Minha Vida + Novo PAC</h4>
-                  <p>
-                    O governo retomou o Minha Casa, Minha Vida e o Novo PAC. A
-                    escolha é usar planejamento conjunto e investimento público
-                    para construir moradia, água, esgoto e outras obras. Para
-                    quem trabalha, isso pode significar sair do aluguel pesado,
-                    ter saneamento e gastar menos tempo e dinheiro no caminho
-                    até o trabalho e os serviços.
-                  </p>
+                  <h4>Casa com serviços por perto</h4>
+                  <div class="side-block">
+                    <h5>O caminho proposto</h5>
+                    <ul class="side-list">
+                      <li>Retomar o Minha Casa, Minha Vida e o Novo PAC.</li>
+                      <li>
+                        Levar água, esgoto e transporte junto com a moradia.
+                      </li>
+                    </ul>
+                  </div>
+                  <div class="side-block">
+                    <h5>Na vida real</h5>
+                    <p>
+                      Uma casa perto de serviços pode reduzir doenças, tempo de
+                      deslocamento e gasto com transporte. O benefício não fica
+                      só na chave.
+                    </p>
+                  </div>
+                  <div class="side-block side-depends">
+                    <h5>O que ainda depende</h5>
+                    <p>
+                      As obras precisam de dinheiro, boa execução e parceria com
+                      estados e municípios.
+                    </p>
+                  </div>
                 </div>
-                <div class="side side-flavio">
+                <div
+                  class="side side-flavio"
+                  data-story="Aposta mais em crédito, empresas e decisões do mercado para construir moradias."
+                >
                   <span class="side-label">Flávio</span>
                   <h4>Crédito e menos burocracia</h4>
-                  <p>
-                    O plano aposta em crédito, empresas e menos burocracia. A
-                    escolha é deixar o financiamento e a realização das obras
-                    mais dependente do mercado. Pode acelerar obras, mas o
-                    resultado para famílias de baixa renda depende dos juros, do
-                    valor da entrada e de a família conseguir pagar.
-                  </p>
+                  <div class="side-block">
+                    <h5>O caminho proposto</h5>
+                    <ul class="side-list">
+                      <li>
+                        Facilitar o financiamento e a atuação das empresas.
+                      </li>
+                      <li>Deixar mais obras e decisões para o mercado.</li>
+                    </ul>
+                  </div>
+                  <div class="side-block">
+                    <h5>Na vida real</h5>
+                    <p>
+                      Isso pode acelerar obras onde existe chance de lucro. Para
+                      famílias de baixa renda, tudo depende dos juros, da
+                      entrada e da prestação.
+                    </p>
+                  </div>
+                  <div class="side-block side-depends">
+                    <h5>O que ainda depende</h5>
+                    <p>
+                      É preciso explicar como a proposta atenderia quem não tem
+                      renda ou crédito suficiente para comprar.
+                    </p>
+                  </div>
                 </div>
               </div>
+              <div class="card-summary">
+                <span>Em uma frase</span>
+                <p class="summary-line summary-lula">
+                  <strong>Lula:</strong> Combina moradia com saneamento,
+                  transporte e outras obras públicas.
+                </p>
+                <p class="summary-line summary-flavio">
+                  <strong>Flávio:</strong> Aposta mais em crédito, empresas e
+                  decisões do mercado para construir moradias.
+                </p>
+              </div>
               <div class="local-source">
-                Fonte específica:
+                Fonte do contexto:
                 <a
                   href="https://www.gov.br/cidades/pt-br/acesso-a-informacao/acoes-e-programas/habitacao/programa-minha-casa-minha-vida/sobre-o-minha-casa-minha-vida-1"
-                  target="_blank"
                   rel="noopener"
-                  >Ministério das Cidades — Minha Casa, Minha Vida</a
+                  target="_blank"
+                  >Minha Casa, Minha Vida</a
                 >.
               </div>
             </article>
-            <article id="educacao" class="compare-card">
-              <div class="card-visual visual-school" aria-hidden="true">
-                <span>Estudar abre portas</span
-                ><svg
-                  viewBox="0 0 96 78"
+            <article class="compare-card" id="educacao">
+              <div aria-hidden="true" class="card-visual visual-school">
+                <span>Estudar abre portas</span>
+                <svg
                   fill="none"
                   stroke="currentColor"
                   stroke-width="2"
+                  viewbox="0 0 96 78"
                 >
-                  <path d="m12 27 36-14 36 14-36 14-36-14Z" />
-                  <path d="M24 34v18c14 9 34 9 48 0V34M84 27v25" />
-                  <path d="M39 61h18" />
+                  <path d="m12 27 36-14 36 14-36 14-36-14Z"></path>
+                  <path
+                    d="M24 34v18c14 9 34 9 48 0V34M84 27v25M39 61h18"
+                  ></path>
                 </svg>
               </div>
               <div class="compare-card-head">
                 <div class="topic-icon">
                   <svg
                     aria-hidden="true"
-                    viewBox="0 0 24 24"
                     fill="none"
                     stroke="currentColor"
                     stroke-width="2"
+                    viewbox="0 0 24 24"
                   >
-                    <path d="m3 9 9-5 9 5-9 5-9-5Z" />
-                    <path d="M7 11v5c3 2 7 2 10 0v-5M21 9v7" />
+                    <path d="m3 9 9-5 9 5-9 5-9-5Z"></path>
+                    <path d="M7 11v5c3 2 7 2 10 0v-5M21 9v7"></path>
                   </svg>
                 </div>
                 <div>
-                  <div class="eyebrow">Oportunidade</div>
-                  <h3>Educação</h3>
+                  <div class="eyebrow">Estudo e oportunidade</div>
+                  <h3>
+                    Como ajudar o jovem a estudar quando a família também
+                    precisa de renda?
+                  </h3>
                 </div>
               </div>
-              <p class="compare-card-sub">
-                Uma escola boa ajuda a pessoa a terminar os estudos, conseguir
-                trabalho e ter mais autonomia.
-              </p>
               <div class="side-by-side">
-                <div class="side side-lula">
+                <div
+                  class="side side-lula"
+                  data-story="Usa apoio financeiro para ajudar o jovem de baixa renda a continuar estudando."
+                >
                   <span class="side-label">Lula</span>
-                  <h4>Pé-de-Meia, institutos e universidade</h4>
-                  <p>
-                    O Pé-de-Meia coloca dinheiro no caminho do estudante pobre
-                    para ele terminar o ensino médio. A escolha é evitar que o
-                    aluno abandone a escola usando apoio financeiro e abrir mais
-                    caminhos de estudo. Para a família trabalhadora, isso
-                    aumenta a chance de o jovem estudar em vez de abandonar a
-                    escola para ajudar em casa. O MEC documenta o programa.
-                  </p>
+                  <h4>Ajudar o jovem a continuar estudando</h4>
+                  <div class="side-block">
+                    <h5>O caminho proposto</h5>
+                    <ul class="side-list">
+                      <li>
+                        Usar o Pé-de-Meia para apoiar estudantes de baixa renda.
+                      </li>
+                      <li>
+                        Ampliar institutos, universidades e caminhos de estudo.
+                      </li>
+                    </ul>
+                  </div>
+                  <div class="side-block">
+                    <h5>Na vida real</h5>
+                    <p>
+                      O apoio financeiro pode diminuir a pressão para abandonar
+                      o ensino médio e aumentar a chance de terminar os estudos.
+                    </p>
+                  </div>
+                  <div class="side-block side-depends">
+                    <h5>O que ainda depende</h5>
+                    <p>
+                      O alcance depende do cadastro, do dinheiro disponível, do
+                      acompanhamento e da qualidade da escola.
+                    </p>
+                  </div>
                 </div>
-                <div class="side side-flavio">
+                <div
+                  class="side side-flavio"
+                  data-story="Prioriza ensino técnico e aproximação com empresas, mas precisa garantir formação completa."
+                >
                   <span class="side-label">Flávio</span>
-                  <h4>Ensino técnico e resultados</h4>
-                  <p>
-                    O plano dá prioridade ao ensino técnico, às metas e à
-                    avaliação. A escolha aproxima escola e emprego, mas não
-                    basta medir resultado: é preciso garantir que o aluno
-                    consiga continuar, entrar e tenha apoio. Sem isso, o
-                    estudante que mais precisa pode continuar ficando para trás.
-                  </p>
+                  <h4>Aproximar escola e emprego</h4>
+                  <div class="side-block">
+                    <h5>O caminho proposto</h5>
+                    <ul class="side-list">
+                      <li>Priorizar ensino técnico, metas e avaliação.</li>
+                      <li>
+                        Ensinar o que as empresas procuram para facilitar a
+                        entrada no trabalho.
+                      </li>
+                    </ul>
+                  </div>
+                  <div class="side-block">
+                    <h5>Na vida real</h5>
+                    <p>
+                      O ensino técnico pode abrir portas para alguns empregos.
+                      Mas medir resultados não basta sem apoio para continuar
+                      aprendendo.
+                    </p>
+                  </div>
+                  <div class="side-block side-depends">
+                    <h5>O que ainda depende</h5>
+                    <p>
+                      É preciso evitar que a escola sirva apenas para preparar
+                      mão de obra barata, sem formar o jovem por completo.
+                    </p>
+                  </div>
                 </div>
+              </div>
+              <div class="card-summary">
+                <span>Em uma frase</span>
+                <p class="summary-line summary-lula">
+                  <strong>Lula:</strong> Usa apoio financeiro para ajudar o
+                  jovem de baixa renda a continuar estudando.
+                </p>
+                <p class="summary-line summary-flavio">
+                  <strong>Flávio:</strong> Prioriza ensino técnico e aproximação
+                  com as empresas, mas precisa garantir formação completa.
+                </p>
               </div>
               <div class="local-source">
-                Fonte específica:
+                Fonte do contexto:
                 <a
                   href="https://www.gov.br/mec/pt-br/pe-de-meia"
-                  target="_blank"
                   rel="noopener"
+                  target="_blank"
                   >MEC — Pé-de-Meia</a
                 >.
               </div>
             </article>
-            <article id="economia" class="compare-card">
-              <div class="card-visual visual-industry" aria-hidden="true">
-                <span>Produzir melhor</span
-                ><svg
-                  viewBox="0 0 96 78"
+            <article class="compare-card" id="economia">
+              <div aria-hidden="true" class="card-visual visual-industry">
+                <span>Produzir melhor</span>
+                <svg
                   fill="none"
                   stroke="currentColor"
                   stroke-width="2"
+                  viewbox="0 0 96 78"
                 >
-                  <path d="M14 65V35l20 12V28l20 12V20l28 17v28H14Z" />
-                  <path d="M24 55h8M43 55h8M62 55h8M24 65h8M43 65h8M62 65h8" />
-                  <path d="M70 13v12M64 19h12" />
+                  <path d="M14 65V35l20 12V28l20 12V20l28 17v28H14Z"></path>
+                  <path
+                    d="M24 55h8M43 55h8M62 55h8M24 65h8M43 65h8M62 65h8M70 13v12M64 19h12"
+                  ></path>
                 </svg>
               </div>
               <div class="compare-card-head">
                 <div class="topic-icon">
                   <svg
                     aria-hidden="true"
-                    viewBox="0 0 24 24"
                     fill="none"
                     stroke="currentColor"
                     stroke-width="2"
+                    viewbox="0 0 24 24"
                   >
-                    <path d="M4 19V5M4 19h17" />
-                    <path d="m7 15 4-4 3 2 5-7" />
+                    <path d="M4 19V5M4 19h17"></path>
+                    <path d="m7 15 4-4 3 2 5-7"></path>
                   </svg>
                 </div>
                 <div>
                   <div class="eyebrow">Renda e futuro</div>
-                  <h3>Economia e indústria</h3>
+                  <h3>
+                    Como o Brasil cresce sem deixar o pequeno negócio e quem
+                    trabalha para trás?
+                  </h3>
                 </div>
               </div>
-              <p class="compare-card-sub">
-                A pergunta é simples: como o Brasil cresce — e quem consegue
-                crescer junto? Isso vale para uma grande fábrica, uma oficina,
-                um salão ou para quem trabalha por conta própria.
-              </p>
               <div class="side-by-side">
-                <div class="side side-lula">
+                <div
+                  class="side side-lula"
+                  data-story="Apoia empresas de todos os tamanhos e tenta juntar crédito, indústria e mais renda para quem trabalha."
+                >
                   <span class="side-label">Lula</span>
-                  <h4>Produção, crédito e renda andando juntos</h4>
-                  <p>
-                    O plano não é contra empresas. Pelo contrário: quer
-                    fortalecer a indústria, a agricultura e os serviços, usando
-                    ciência, crédito público e obras para movimentar negócios
-                    pequenos, médios e grandes. Ao mesmo tempo, tenta deixar
-                    mais dinheiro com quem trabalha: IR zero até R$ 5 mil,
-                    redução até R$ 7.350, imposto maior no topo, MEI, Simples e
-                    crédito para o pequeno negócio. A ideia é ajudar as pessoas
-                    a melhorar de vida — não prometer que cada preço vai cair.
-                  </p>
+                  <h4>Empresas crescendo com o país</h4>
+                  <div class="side-block">
+                    <h5>O caminho proposto</h5>
+                    <ul class="side-list">
+                      <li>
+                        Apoiar negócios pequenos, médios e grandes com crédito e
+                        indústria.
+                      </li>
+                      <li>
+                        Usar MEI, Simples, Acredita e ProCred para apoiar
+                        pequenos negócios.
+                      </li>
+                    </ul>
+                  </div>
+                  <div class="side-block">
+                    <h5>Na vida real</h5>
+                    <p>
+                      Crédito, orientação e CNPJ podem ajudar quem trabalha por
+                      conta própria a manter o negócio, contratar e aumentar a
+                      renda. Obras e indústria também movimentam empresas
+                      maiores.
+                    </p>
+                  </div>
+                  <div class="side-block side-depends">
+                    <h5>O que ainda depende</h5>
+                    <p>
+                      As medidas precisam sair do papel e o crescimento precisa
+                      chegar aos salários, aos empregos e aos serviços públicos.
+                    </p>
+                  </div>
                 </div>
-                <div class="side side-flavio">
+                <div
+                  class="side side-flavio"
+                  data-story="Aposta em menos impostos, menos regras e mais decisões nas mãos das empresas e do mercado."
+                >
                   <span class="side-label">Flávio</span>
-                  <h4>Cortar imposto e deixar o mercado puxar</h4>
-                  <p>
-                    O plano também pode abrir espaço para empresas pequenas e
-                    grandes. A aposta é reduzir impostos, ampliar concessões e
-                    deixar o investimento privado conduzir mais decisões. O
-                    ponto de atenção é que quem já tem dinheiro, crédito e
-                    estrutura costuma aproveitar primeiro. Sem compromissos
-                    claros com emprego, salário e serviço público, o crescimento
-                    pode ficar concentrado.
-                  </p>
+                  <h4>Empresas com menos regras</h4>
+                  <div class="side-block">
+                    <h5>O caminho proposto</h5>
+                    <ul class="side-list">
+                      <li>
+                        Reduzir impostos e passar mais obras para empresas.
+                      </li>
+                      <li>
+                        Deixar o investimento privado conduzir mais decisões.
+                      </li>
+                    </ul>
+                  </div>
+                  <div class="side-block">
+                    <h5>Na vida real</h5>
+                    <p>
+                      Quem já tem dinheiro, crédito e estrutura tende a sair na
+                      frente. Sem compromissos claros, o crescimento pode ficar
+                      concentrado.
+                    </p>
+                  </div>
+                  <div class="side-block side-depends">
+                    <h5>O que ainda depende</h5>
+                    <p>
+                      É preciso mostrar como pequenos negócios e trabalhadores
+                      seriam protegidos com menos crédito, serviços ou garantias
+                      públicas.
+                    </p>
+                  </div>
                 </div>
+              </div>
+              <div class="card-summary">
+                <span>Em uma frase</span>
+                <p class="summary-line summary-lula">
+                  <strong>Lula:</strong> Apoia empresas de todos os tamanhos e
+                  tenta juntar crédito, indústria e mais renda para quem
+                  trabalha.
+                </p>
+                <p class="summary-line summary-flavio">
+                  <strong>Flávio:</strong> Aposta em menos impostos, menos
+                  regras e mais decisões nas mãos das empresas e do mercado.
+                </p>
               </div>
               <div class="local-source">
-                <strong>Fontes:</strong>
+                Fontes:
                 <a
                   href="https://www12.senado.leg.br/noticias/materias/2025/11/27/sancionada-isencao-do-imposto-de-renda-para-quem-ganha-ate-r-5-mil-por-mes"
-                  target="_blank"
                   rel="noopener"
-                  >Senado — IR até R$ 5 mil e redução até R$ 7.350</a
-                >
-                ·
-                <a
-                  href="https://www.gov.br/receitafederal/pt-br/acesso-a-informacao/acoes-e-programas/programas-e-atividades/reforma-tributaria-do-consumo"
                   target="_blank"
-                  rel="noopener"
-                  >Receita — reforma tributária</a
-                >
-                ·
+                  >Senado — IR</a
+                >,
                 <a
                   href="https://www.gov.br/memp/pt-br/programa-acredita"
-                  target="_blank"
                   rel="noopener"
-                  >Acredita — pequenos negócios</a
+                  target="_blank"
+                  >Acredita</a
                 >
-                ·
+                e
                 <a
                   href="https://www.gov.br/pt-br/servicos/optar-pelo-simples-nacional"
-                  target="_blank"
                   rel="noopener"
+                  target="_blank"
                   >Simples Nacional</a
                 >.
               </div>
             </article>
-            <article id="ciencia" class="compare-card">
-              <div class="card-visual visual-science" aria-hidden="true">
-                <span>Conhecimento aplicado</span
-                ><svg
-                  viewBox="0 0 96 78"
+            <article class="compare-card" id="ciencia">
+              <div aria-hidden="true" class="card-visual visual-science">
+                <span>Tecnologia feita no Brasil</span>
+                <svg
                   fill="none"
                   stroke="currentColor"
                   stroke-width="2"
+                  viewbox="0 0 96 78"
                 >
                   <path
                     d="M39 12h18M43 12v18l-15 29a5 5 0 0 0 4 7h32a5 5 0 0 0 4-7L53 30V12"
-                  />
-                  <path d="M34 49h28" />
-                  <circle cx="45" cy="41" r="3" />
-                  <circle cx="55" cy="56" r="3" />
+                  ></path>
+                  <path d="M34 49h28"></path>
+                  <circle cx="45" cy="41" r="3"></circle>
+                  <circle cx="55" cy="56" r="3"></circle>
                 </svg>
               </div>
               <div class="compare-card-head">
                 <div class="topic-icon">
                   <svg
                     aria-hidden="true"
-                    viewBox="0 0 24 24"
                     fill="none"
                     stroke="currentColor"
                     stroke-width="2"
+                    viewbox="0 0 24 24"
                   >
                     <path
                       d="M9 3h6M10 3v6l-4.5 8.2A2 2 0 0 0 7.2 20h9.6a2 2 0 0 0 1.7-2.8L14 9V3"
-                    />
-                    <path d="M8 14h8" />
+                    ></path>
+                    <path d="M8 14h8"></path>
                   </svg>
                 </div>
                 <div>
                   <div class="eyebrow">Pesquisa e futuro</div>
-                  <h3>Ciência e tecnologia</h3>
+                  <h3>
+                    O Brasil vai só comprar tecnologia ou também criar
+                    conhecimento e trabalho qualificado?
+                  </h3>
                 </div>
               </div>
-              <p class="compare-card-sub">
-                O Brasil vai apenas comprar tecnologia ou vai formar pessoas,
-                pesquisar e criar trabalho qualificado aqui?
-              </p>
               <div class="side-by-side">
-                <div class="side side-lula">
+                <div
+                  class="side side-lula"
+                  data-story="Trata ciência como investimento para formar pessoas, criar tecnologia e abrir empregos melhores."
+                >
                   <span class="side-label">Lula</span>
-                  <h4>Universidade, pesquisa e indústria</h4>
-                  <p>
-                    O plano aposta em ciência, institutos federais, inovação e
-                    troca para uma energia menos poluente. A escolha é tratar
-                    conhecimento como investimento do país. Para quem trabalha,
-                    isso pode virar estudo, tecnologia feita aqui e empregos
-                    melhores — se houver dinheiro e se o investimento for
-                    mantido.
-                  </p>
+                  <h4>Conhecimento como investimento</h4>
+                  <div class="side-block">
+                    <h5>O caminho proposto</h5>
+                    <ul class="side-list">
+                      <li>
+                        Apoiar universidades, institutos, pesquisa e inovação.
+                      </li>
+                      <li>
+                        Juntar pesquisa, indústria e energia menos poluente.
+                      </li>
+                    </ul>
+                  </div>
+                  <div class="side-block">
+                    <h5>Na vida real</h5>
+                    <p>
+                      Investimento contínuo pode formar pessoas, criar
+                      tecnologia aqui e abrir empregos melhores. Também reduz a
+                      dependência de soluções de fora.
+                    </p>
+                  </div>
+                  <div class="side-block side-depends">
+                    <h5>O que ainda depende</h5>
+                    <p>
+                      O resultado depende de dinheiro contínuo, boa gestão e
+                      ligação entre pesquisa, escolas e empresas.
+                    </p>
+                  </div>
                 </div>
-                <div class="side side-flavio">
+                <div
+                  class="side side-flavio"
+                  data-story="Dá mais peso às empresas para puxar a inovação, mas pode deixar pesquisas sem lucro imediato para trás."
+                >
                   <span class="side-label">Flávio</span>
-                  <h4>Inovação puxada pelo mercado</h4>
-                  <p>
-                    O plano dá prioridade às empresas, às parcerias e a menos
-                    burocracia. Isso pode acelerar negócios, mas tudo depende de
-                    manter o dinheiro para estudo e pesquisa. Sem isso, o Brasil
-                    continua comprando tecnologia pronta e os empregos melhores
-                    ficam fora.
-                  </p>
+                  <h4>Inovação puxada pelas empresas</h4>
+                  <div class="side-block">
+                    <h5>O caminho proposto</h5>
+                    <ul class="side-list">
+                      <li>Priorizar empresas, parcerias e menos burocracia.</li>
+                      <li>
+                        Deixar empresas escolherem mais as pesquisas apoiadas.
+                      </li>
+                    </ul>
+                  </div>
+                  <div class="side-block">
+                    <h5>Na vida real</h5>
+                    <p>
+                      Isso pode acelerar produtos e negócios. Sem dinheiro
+                      público estável, pesquisas sem lucro rápido podem ficar
+                      para trás.
+                    </p>
+                  </div>
+                  <div class="side-block side-depends">
+                    <h5>O que ainda depende</h5>
+                    <p>
+                      É preciso manter pesquisa básica, formação de pessoas e
+                      acesso público ao conhecimento.
+                    </p>
+                  </div>
                 </div>
+              </div>
+              <div class="card-summary">
+                <span>Em uma frase</span>
+                <p class="summary-line summary-lula">
+                  <strong>Lula:</strong> Trata ciência como investimento para
+                  formar pessoas, criar tecnologia e abrir empregos melhores.
+                </p>
+                <p class="summary-line summary-flavio">
+                  <strong>Flávio:</strong> Dá mais peso às empresas para puxar a
+                  inovação, mas pode deixar pesquisas sem lucro imediato para
+                  trás.
+                </p>
               </div>
               <div class="local-source">
-                Fonte específica:
+                Fonte do contexto:
                 <a
                   href="https://www.gov.br/mcti/pt-br/acompanhe-o-mcti"
-                  target="_blank"
                   rel="noopener"
+                  target="_blank"
                   >MCTI — ciência, tecnologia e inovação</a
+                >.
+              </div>
+            </article>
+            <article class="compare-card" id="democracia">
+              <div aria-hidden="true" class="card-visual visual-safety">
+                <span>Regras que protegem</span>
+                <svg
+                  fill="none"
+                  stroke="currentColor"
+                  stroke-width="2"
+                  viewbox="0 0 96 78"
+                >
+                  <path
+                    d="M48 10v55M27 21h42M17 21l-10 18h20L17 21ZM79 21 69 39h20L79 21ZM27 21l-10 18h20M69 39l10-18"
+                  ></path>
+                  <path d="M25 65h46"></path>
+                </svg>
+              </div>
+              <div class="compare-card-head">
+                <div class="topic-icon">
+                  <svg
+                    aria-hidden="true"
+                    fill="none"
+                    stroke="currentColor"
+                    stroke-width="2"
+                    viewbox="0 0 24 24"
+                  >
+                    <path d="M4 5h16v14H4z"></path>
+                    <path d="M8 9h8M8 13h6M8 17h4"></path>
+                  </svg>
+                </div>
+                <div>
+                  <div class="eyebrow">Regras do jogo</div>
+                  <h3>
+                    Quem garante que as regras continuem valendo quando o
+                    resultado desagrada?
+                  </h3>
+                </div>
+              </div>
+              <div class="side-by-side">
+                <div
+                  class="side side-lula"
+                  data-story="Mantém a disputa dentro das regras e preserva a possibilidade de cobrar e trocar o governo."
+                >
+                  <span class="side-label">Lula</span>
+                  <h4>Respeitar as regras e as urnas</h4>
+                  <div class="side-block">
+                    <h5>O caminho proposto</h5>
+                    <ul class="side-list">
+                      <li>Manter a disputa dentro das regras das eleições.</li>
+                      <li>Negociar sem concentrar todo o poder no governo.</li>
+                    </ul>
+                  </div>
+                  <div class="side-block">
+                    <h5>Na vida real</h5>
+                    <p>
+                      Isso não torna nenhum governo perfeito. Mas permite
+                      cobrar, protestar, organizar-se e trocar o governo quando
+                      as coisas dão errado.
+                    </p>
+                  </div>
+                  <div class="side-block side-depends">
+                    <h5>O que ainda depende</h5>
+                    <p>
+                      A democracia precisa de respeito contínuo às eleições, à
+                      imprensa, à Justiça e ao resultado das urnas.
+                    </p>
+                  </div>
+                </div>
+                <div
+                  class="side side-flavio"
+                  data-story="Propõe mudanças nas regras e carrega o debate sobre a relação da família Bolsonaro com a democracia."
+                >
+                  <span class="side-label">Flávio</span>
+                  <h4>Mudar as regras do poder</h4>
+                  <div class="side-block">
+                    <h5>O caminho proposto</h5>
+                    <ul class="side-list">
+                      <li>
+                        Flávio defendeu acabar com a reeleição durante o próprio
+                        governo.
+                      </li>
+                      <li>
+                        A família Bolsonaro já colocou instituições e eleições
+                        em dúvida.
+                      </li>
+                    </ul>
+                  </div>
+                  <div class="side-block">
+                    <h5>Na vida real</h5>
+                    <p>
+                      Mudar uma regra pode ser legítimo. A pergunta é se isso
+                      ajuda o povo a trocar de governo ou concentra mais poder.
+                    </p>
+                  </div>
+                  <div class="side-block side-depends">
+                    <h5>O que ainda depende</h5>
+                    <p>
+                      A PGR afirmou que Jair Bolsonaro sabia e concordou com um
+                      plano para matar Lula, Alckmin e Alexandre de Moraes. É
+                      uma acusação, não uma sentença: o caso segue na Justiça.
+                    </p>
+                  </div>
+                </div>
+              </div>
+              <div class="card-summary">
+                <span>Em uma frase</span>
+                <p class="summary-line summary-lula">
+                  <strong>Lula:</strong> Mantém a disputa dentro das regras e
+                  preserva a possibilidade de cobrar e trocar o governo.
+                </p>
+                <p class="summary-line summary-flavio">
+                  <strong>Flávio:</strong> Propõe mudanças nas regras e carrega
+                  o debate sobre a relação da família Bolsonaro com a
+                  democracia.
+                </p>
+              </div>
+              <div class="local-source">
+                Fontes:
+                <a
+                  href="https://g1.globo.com/politica/noticia/2026/10/08/flavio-reforca-que-se-eleito-quer-fim-reeleicao-ja-em-seu-governo.ghtml"
+                  rel="noopener"
+                  target="_blank"
+                  >G1 — reeleição</a
+                >
+                e
+                <a
+                  href="https://g1.globo.com/politica/noticia/2025/02/18/bolsonaro-sabia-e-concordou-com-o-plano-para-matar-lula-diz-gonet.ghtml"
+                  rel="noopener"
+                  target="_blank"
+                  >G1 — denúncia da Procuradoria-Geral da República</a
                 >.
               </div>
             </article>
@@ -3273,15 +3965,23 @@
         return {
           topic: card.querySelector(".eyebrow")?.textContent || "Tema",
           title: card.querySelector("h3")?.textContent || "Comparação",
-          question: card.querySelector(".compare-card-sub")?.textContent || "",
+          question:
+            card.querySelector(".compare-card-head h3")?.textContent?.trim() ||
+            "",
           lula: {
             title: side[0]?.querySelector("h4")?.textContent || "Lula",
-            text: side[0]?.querySelector("p")?.textContent || "",
+            text:
+              side[0]?.dataset.story ||
+              side[0]?.querySelector("p")?.textContent ||
+              "",
           },
           flavio: {
             title:
               side[1]?.querySelector("h4")?.textContent || "Flávio Bolsonaro",
-            text: side[1]?.querySelector("p")?.textContent || "",
+            text:
+              side[1]?.dataset.story ||
+              side[1]?.querySelector("p")?.textContent ||
+              "",
           },
         };
       };
@@ -3387,7 +4087,11 @@
         );
         ctx.fillStyle = "#a6403d";
         ctx.font = "800 20px Arial";
-        ctx.fillText("vototrabalhador · compare antes de decidir", 64, H - 74);
+        ctx.fillText(
+          "napontadolapis.org · compare antes de decidir",
+          64,
+          H - 74,
+        );
         return canvas;
       };
       const canvasBlob = (canvas) =>

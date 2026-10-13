@@ -1,0 +1,45 @@
+# Na Ponta do Lápis
+
+> Portal público que explica, em português brasileiro simples, como propostas, planos de governo e legados presidenciais podem afetar a vida de quem trabalha.
+
+## Sobre o portal
+
+- URL canônica: https://napontadolapis.org/
+- Idioma: pt-BR
+- Público: pessoas que têm dúvidas sobre votar, votar branco, votar nulo ou não comparecer; trabalhadores e eleitores indecisos.
+- Tema central: comparação documentada de candidatos à Presidência da República, seus planos e legados.
+
+## Perguntas respondidas
+
+- Vale a pena votar ou deixar de votar?
+- Qual é a diferença entre voto branco, voto nulo e abstenção?
+- Como comparar candidatos à Presidência da República?
+- O que os planos de governo propõem para trabalho, renda, saúde, segurança, moradia, educação, economia, ciência e democracia?
+- O que já foi feito por governos anteriores e o que ainda é promessa?
+- Como verificar as fontes antes de decidir?
+
+## Como o conteúdo é organizado
+
+A página separa o que já aconteceu, o que cada candidato propõe, o possível efeito na vida real e o que ainda depende de Congresso, orçamento, regulamentação ou execução. A comparação não trata promessa como resultado e apresenta ressalvas quando uma associação não prova causalidade.
+
+## Temas principais
+
+- Voto branco, voto nulo, abstenção e participação democrática
+- Comparação de planos de governo
+- Direitos trabalhistas, salário, emprego e trabalho por aplicativo
+- Bolsa Família, renda e segurança alimentar
+- SUS, Mais Médicos e Farmácia Popular
+- Segurança pública e investigação
+- Moradia e Minha Casa, Minha Vida
+- Educação, Prouni, cotas e Pé-de-Meia
+- Economia, reforma tributária, MEI, Simples e pequenos negócios
+- Indústria, ciência, tecnologia, clima e soberania
+- Legados dos governos Lula, Dilma, Temer e Jair Bolsonaro
+
+## Fontes
+
+O portal vincula fontes específicas em cada bloco e reúne referências institucionais ao final da página. Entre elas estão TSE, IBGE, MDS, FGV, Planalto, Senado Federal, MEC, Ministério da Saúde, Ministério da Justiça, MCTI, INPE e FMI.
+
+## Limites de interpretação
+
+O portal é uma comparação editorial baseada em documentos públicos e evidências citadas. Ele não prevê o futuro, não substitui a leitura das fontes originais e não afirma que uma política isolada explica sozinha um resultado econômico ou social.

@@ -14,7 +14,10 @@
     />
     <meta name="googlebot" content="index, follow" />
     <meta name="author" content="Na Ponta do Lápis" />
-    <meta name="article:section" content="Política, trabalho e direitos sociais" />
+    <meta
+      name="article:section"
+      content="Política, trabalho e direitos sociais"
+    />
     <link rel="alternate" type="text/plain" href="/llms.txt" />
     <link
       rel="icon"
@@ -122,19 +125,19 @@
     />
     <style>
       :root {
-        --ink: #102A43;
-        --ink-soft: #3B5368;
-        --paper: #FBFAF4;
-        --paper-deep: #EDF2EA;
-        --white: #FFFFFF;
-        --line: #D7DED6;
-        --yellow: #E9B931;
-        --yellow-soft: #F7E6A5;
-        --coral: #A6403D;
-        --coral-soft: #F4DEDA;
-        --green: #146B53;
-        --green-soft: #DCEDE4;
-        --blue-soft: #DFECF3;
+        --ink: #102a43;
+        --ink-soft: #3b5368;
+        --paper: #fbfaf4;
+        --paper-deep: #edf2ea;
+        --white: #ffffff;
+        --line: #d7ded6;
+        --yellow: #e9b931;
+        --yellow-soft: #f7e6a5;
+        --coral: #a6403d;
+        --coral-soft: #f4deda;
+        --green: #146b53;
+        --green-soft: #dcede4;
+        --blue-soft: #dfecf3;
         --sans: "DM Sans", system-ui, -apple-system, "Segoe UI", sans-serif;
         --serif: "Source Serif 4", Georgia, serif;
         --max: 1180px;
@@ -471,7 +474,7 @@
       }
       .explore {
         background: var(--yellow);
-        border-bottom: 1px solid #B8860B;
+        border-bottom: 1px solid #b8860b;
       }
       .explore-head {
         display: flex;
@@ -584,12 +587,12 @@
         color: #256184;
       }
       .visual-money {
-        background: #F7E6A5;
+        background: #f7e6a5;
         color: #8b6718;
       }
       .visual-health {
-        background: #DCEDE4;
-        color: #146B53;
+        background: #dcede4;
+        color: #146b53;
       }
       .visual-safety {
         background: #e8e1f1;
@@ -612,16 +615,22 @@
         color: #5a4b86;
       }
       .compare-card-head {
-        display: flex;
+        display: grid;
+        grid-template-columns: 52px minmax(0, 1fr) auto;
         align-items: center;
-        gap: 15px;
+        column-gap: 15px;
+        row-gap: 10px;
         padding: 24px 25px 18px;
       }
       .compare-card-head > div:nth-child(2) {
+        grid-column: 2;
         min-width: 0;
       }
       .share-icon-btn {
-        margin-left: auto;
+        grid-column: 3;
+        grid-row: 1;
+        align-self: center;
+        margin-left: 0;
         display: inline-flex;
         align-items: center;
         justify-content: center;
@@ -632,7 +641,7 @@
         border: 1px solid #b7c7d4;
         border-radius: 999px;
         background: #fff;
-        color: #0B5A45;
+        color: #0b5a45;
         font: 800 11px/1 var(--sans);
         letter-spacing: 0.01em;
         cursor: pointer;
@@ -645,8 +654,8 @@
       }
       .share-icon-btn:hover {
         transform: translateY(-2px);
-        background: #DFECF3;
-        border-color: #0B5A45;
+        background: #dfecf3;
+        border-color: #0b5a45;
       }
       .share-icon-btn:disabled {
         opacity: 0.65;
@@ -661,8 +670,8 @@
       .share-callout {
         background: var(--ink);
         color: var(--paper);
-        border-top: 1px solid #16324F;
-        border-bottom: 1px solid #16324F;
+        border-top: 1px solid #16324f;
+        border-bottom: 1px solid #16324f;
       }
       .share-callout-grid {
         display: grid;
@@ -685,7 +694,7 @@
       .share-callout p {
         max-width: 670px;
         margin: 20px 0 0;
-        color: #C9D5DF;
+        color: #c9d5df;
         font-size: 20px;
         line-height: 1.5;
       }
@@ -775,14 +784,14 @@
         content: "Abra esta página no celular para compartilhar";
         display: block;
         margin-top: 18px;
-        color: #C9D5DF;
+        color: #c9d5df;
         text-align: center;
         font: 700 11px/1.4 var(--sans);
       }
       .share-status {
         min-height: 18px;
         margin: 11px 0 0;
-        color: #C9D5DF;
+        color: #c9d5df;
         text-align: center;
         font: 700 11px/1.4 var(--sans);
       }
@@ -802,7 +811,9 @@
         opacity: 0;
         transform: translateY(10px);
         pointer-events: none;
-        transition: opacity 0.2s ease, transform 0.2s ease;
+        transition:
+          opacity 0.2s ease,
+          transform 0.2s ease;
       }
       .share-toast.is-visible {
         opacity: 1;
@@ -816,7 +827,7 @@
         height: 52px;
         border-radius: 14px;
         background: var(--blue-soft);
-        color: #0B5A45;
+        color: #0b5a45;
       }
       .topic-icon svg {
         width: 28px;
@@ -852,10 +863,10 @@
         border-top: 1px solid var(--line);
       }
       .side-lula {
-        background: #DFECF3;
+        background: #dfecf3;
       }
       .side-flavio {
-        background: #EDE8F2;
+        background: #ede8f2;
       }
       .side-label {
         display: inline-block;
@@ -867,7 +878,7 @@
         text-transform: uppercase;
       }
       .side-lula .side-label {
-        background: #0B5A45;
+        background: #0b5a45;
         color: #fff;
       }
       .side-flavio .side-label {
@@ -916,10 +927,10 @@
           align-content: start;
           background: linear-gradient(
             to right,
-            #DFECF3 0%,
-            #DFECF3 50%,
-            #EDE8F2 50%,
-            #EDE8F2 100%
+            #dfecf3 0%,
+            #dfecf3 50%,
+            #ede8f2 50%,
+            #ede8f2 100%
           );
         }
         .side {
@@ -1005,7 +1016,7 @@
         gap: 7px;
         padding: 18px 25px;
         border-top: 1px solid var(--line);
-        background: #FFFFFF;
+        background: #ffffff;
       }
       .card-summary p {
         margin: 0;
@@ -1071,7 +1082,7 @@
       }
       .pt-legacy-lead p {
         margin: 0;
-        color: #D5DFE6;
+        color: #d5dfe6;
         font-size: 18px;
         line-height: 1.5;
       }
@@ -1125,10 +1136,10 @@
         color: #fff;
       }
       .conclusion .section-heading p {
-        color: #D5DFE6;
+        color: #d5dfe6;
       }
       .conclusion .eyebrow {
-        color: #F2C94C;
+        color: #f2c94c;
       }
       .conclusion-grid {
         display: grid;
@@ -1150,7 +1161,7 @@
       }
       .conclusion-lead p {
         margin: 0;
-        color: #D5DFE6;
+        color: #d5dfe6;
         font-size: 18px;
         line-height: 1.5;
       }
@@ -1293,10 +1304,10 @@
         color: #fff;
       }
       .legacy .section-heading p {
-        color: #FFFFFF;
+        color: #ffffff;
       }
       .legacy .eyebrow {
-        color: #FFFFFF;
+        color: #ffffff;
       }
       .legacy-grid {
         display: grid;
@@ -1315,7 +1326,7 @@
       }
       .legacy-lead p {
         margin: 0;
-        color: #D5DFE6;
+        color: #d5dfe6;
         font-size: 18px;
         line-height: 1.5;
       }
@@ -1366,7 +1377,7 @@
       .evidence-panel-head p {
         max-width: 410px;
         margin: 0;
-        color: #D5DFE6;
+        color: #d5dfe6;
         font: 600 12px/1.5 var(--sans);
         text-align: right;
       }
@@ -1644,16 +1655,17 @@
           font-size: 24px;
         }
         .compare-card-head {
-          flex-wrap: wrap;
+          grid-template-columns: 52px minmax(0, 1fr);
           padding: 21px 20px 16px;
         }
         .compare-card-head .share-icon-btn {
+          grid-column: 2;
+          grid-row: 2;
           display: inline-flex;
-          order: 3;
-          margin-left: 67px;
-          flex: 0 1 calc(100% - 67px);
-          width: calc(100% - 67px);
+          width: 100%;
           min-height: 36px;
+          margin: 2px 0 0;
+          justify-self: stretch;
         }
         .share-panel:after {
           display: none;
@@ -3361,7 +3373,7 @@
             style="
               margin: 20px 0 0;
               font: 600 12px/1.5 var(--sans);
-              color: #FFFFFF;
+              color: #ffffff;
             "
           >
             Fontes do contexto:
@@ -4037,29 +4049,58 @@
         ctx.fillStyle = fill;
         ctx.fill();
       };
+      const normalizeStoryText = (value, max = 220) =>
+        escapeCanvasText(value || "", max);
+      const extractSideStory = (side) => {
+        const blocks = [...side.querySelectorAll(".side-block")];
+        const blockByLabel = (label) =>
+          blocks.find(
+            (block) =>
+              block.querySelector("h5")?.textContent?.trim().toLowerCase() ===
+              label,
+          );
+        const proposedBlock = blockByLabel("o caminho proposto");
+        const realBlock = blockByLabel("na vida real");
+        const dependsBlock = blockByLabel("o que ainda depende");
+        return {
+          title:
+            side
+              .querySelector("h4")
+              ?.textContent?.replace(/\s+/g, " ")
+              .trim() || "Comparação",
+          proposed: proposedBlock
+            ? [...proposedBlock.querySelectorAll("li")].map((item) =>
+                item.textContent.replace(/\s+/g, " ").trim(),
+              )
+            : [],
+          real:
+            realBlock
+              ?.querySelector("p")
+              ?.textContent?.replace(/\s+/g, " ")
+              .trim() || "",
+          depends:
+            dependsBlock
+              ?.querySelector("p")
+              ?.textContent?.replace(/\s+/g, " ")
+              .trim() || "",
+        };
+      };
       const cardPayload = (card) => {
         const side = card.querySelectorAll(".side");
         return {
-          topic: card.querySelector(".eyebrow")?.textContent || "Tema",
-          title: card.querySelector("h3")?.textContent || "Comparação",
-          question:
-            card.querySelector(".compare-card-head h3")?.textContent?.trim() ||
-            "",
-          lula: {
-            title: side[0]?.querySelector("h4")?.textContent || "Lula",
-            text:
-              side[0]?.dataset.story ||
-              side[0]?.querySelector("p")?.textContent ||
-              "",
-          },
-          flavio: {
-            title:
-              side[1]?.querySelector("h4")?.textContent || "Flávio Bolsonaro",
-            text:
-              side[1]?.dataset.story ||
-              side[1]?.querySelector("p")?.textContent ||
-              "",
-          },
+          topic: card.querySelector(".eyebrow")?.textContent?.trim() || "Tema",
+          title:
+            card
+              .querySelector("h3")
+              ?.textContent?.replace(/\s+/g, " ")
+              .trim() || "Comparação",
+          source:
+            card
+              .querySelector(".local-source")
+              ?.textContent?.replace(/\s+/g, " ")
+              .trim() || "Fontes e ressalvas disponíveis na página.",
+          lula: extractSideStory(side[0]),
+          flavio: extractSideStory(side[1]),
         };
       };
       const drawStory = (data) => {
@@ -4067,107 +4108,204 @@
         canvas.width = 1080;
         canvas.height = 1920;
         const ctx = canvas.getContext("2d");
-        const W = canvas.width,
-          H = canvas.height;
+        const W = canvas.width;
+        const H = canvas.height;
+        const pad = 64;
+        const contentW = W - pad * 2;
+        const textW = contentW - 72;
         ctx.fillStyle = "#FFFFFF";
         ctx.fillRect(0, 0, W, H);
         ctx.fillStyle = "#102A43";
-        ctx.fillRect(0, 0, W, 210);
+        ctx.fillRect(0, 0, W, 142);
+        ctx.fillStyle = "#146B53";
+        ctx.fillRect(0, 142, W, 10);
         ctx.fillStyle = "#E9B931";
-        ctx.fillRect(0, 210, W, 8);
+        ctx.fillRect(0, 152, W, 6);
+
         ctx.fillStyle = "#FFFFFF";
-        ctx.font = "800 28px Arial";
-        ctx.fillText("NA PONTA DO LÁPIS", 64, 92);
+        ctx.font = "800 30px Arial";
+        ctx.fillText("NA PONTA DO LÁPIS", pad, 68);
+        ctx.fillStyle = "#DCEDE4";
         ctx.font = "700 18px Arial";
-        ctx.fillStyle = "#dce4eb";
-        ctx.fillText("COMPARAÇÃO COM FONTES E RESSALVAS", 64, 143);
-        let y = 305;
-        ctx.fillStyle = "#a6403d";
-        ctx.font = "800 23px Arial";
-        ctx.fillText(data.topic.toUpperCase(), 64, y);
-        y += 57;
+        ctx.fillText("COMPARAÇÃO COM FONTES", pad, 106);
+
+        let y = 236;
+        ctx.fillStyle = "#146B53";
+        ctx.font = "800 25px Arial";
+        ctx.fillText(data.topic.toUpperCase(), pad, y);
+        y += 56;
         ctx.fillStyle = "#102A43";
-        ctx.font = "800 58px Arial";
-        y = drawTextBlock(ctx, data.title, 64, y, W - 128, 62, 2);
-        y += 40;
-        ctx.fillStyle = "#536174";
-        ctx.font = "500 28px Georgia";
+        ctx.font = "800 61px Arial";
         y = drawTextBlock(
           ctx,
-          escapeCanvasText(data.question, 180),
-          64,
+          normalizeStoryText(data.title, 220),
+          pad,
           y,
-          W - 128,
-          39,
+          contentW,
+          67,
           3,
         );
-        y += 46;
-        const boxW = W - 128;
-        const boxH = 480;
+        y += 34;
+
         const boxes = [
           {
             label: "LULA",
-            color: "#246887",
-            title: data.lula.title,
-            text: data.lula.text,
-            fill: "#DFECF3",
+            color: "#146B53",
+            fill: "#DCEDE4",
+            ...data.lula,
           },
           {
             label: "FLÁVIO",
-            color: "#665080",
-            title: data.flavio.title,
-            text: data.flavio.text,
+            color: "#5B4B80",
             fill: "#EDE8F2",
+            ...data.flavio,
           },
         ];
+        const lineMetrics = boxes.map((box) => {
+          ctx.font = "800 35px Arial";
+          const titleLines = wrapCanvas(ctx, box.title, textW, 40, 2).length;
+          ctx.font = "500 25px Arial";
+          const proposedLines = box.proposed.reduce(
+            (total, item) =>
+              total +
+              wrapCanvas(
+                ctx,
+                `• ${normalizeStoryText(item, 150)}`,
+                textW,
+                29,
+                3,
+              ).length,
+            0,
+          );
+          const realLines = wrapCanvas(
+            ctx,
+            normalizeStoryText(box.real, 210),
+            textW,
+            29,
+            3,
+          ).length;
+          const dependsLines = wrapCanvas(
+            ctx,
+            normalizeStoryText(box.depends, 190),
+            textW,
+            25,
+            3,
+          ).length;
+          return { titleLines, proposedLines, realLines, dependsLines };
+        });
+        const boxH = Math.max(
+          390,
+          ...lineMetrics.map(
+            ({ titleLines, proposedLines, realLines, dependsLines }) =>
+              144 +
+              titleLines * 40 +
+              27 +
+              proposedLines * 29 +
+              31 +
+              realLines * 29 +
+              31 +
+              dependsLines * 25,
+          ),
+        );
+
         for (const box of boxes) {
-          roundedRect(ctx, 64, y, boxW, boxH, 18, box.fill);
+          roundedRect(ctx, pad, y, contentW, boxH, 20, box.fill);
           ctx.fillStyle = box.color;
-          ctx.font = "800 20px Arial";
-          ctx.fillText(box.label, 92, y + 40);
+          ctx.font = "800 21px Arial";
+          ctx.fillText(box.label, pad + 28, y + 38);
           ctx.fillStyle = "#102A43";
-          ctx.font = "800 30px Arial";
-          let ty = y + 92;
-          ty = drawTextBlock(ctx, box.title, 92, ty, boxW - 56, 34, 2);
-          ty += 20;
+          ctx.font = "800 35px Arial";
+          let ty = y + 83;
+          ty = drawTextBlock(ctx, box.title, pad + 28, ty, textW, 40, 2);
+          ty += 22;
+
+          ctx.fillStyle = box.color;
+          ctx.font = "800 17px Arial";
+          ctx.fillText("O CAMINHO PROPOSTO", pad + 28, ty);
+          ty += 28;
+          ctx.fillStyle = "#31485D";
+          ctx.font = "500 25px Arial";
+          for (const item of box.proposed) {
+            ctx.fillText("•", pad + 28, ty);
+            ty = drawTextBlock(
+              ctx,
+              normalizeStoryText(item, 150),
+              pad + 48,
+              ty,
+              textW - 20,
+              29,
+              3,
+            );
+            ty += 5;
+          }
+          ty += 13;
+          ctx.fillStyle = box.color;
+          ctx.font = "800 17px Arial";
+          ctx.fillText("NA VIDA REAL", pad + 28, ty);
+          ty += 27;
+          ctx.fillStyle = "#31485D";
+          ctx.font = "500 25px Georgia";
+          ty = drawTextBlock(
+            ctx,
+            normalizeStoryText(box.real, 210),
+            pad + 28,
+            ty,
+            textW,
+            29,
+            3,
+          );
+          ty += 13;
+          ctx.fillStyle = box.color;
+          ctx.font = "800 17px Arial";
+          ctx.fillText("AINDA DEPENDE", pad + 28, ty);
+          ty += 26;
           ctx.fillStyle = "#536174";
-          ctx.font = "500 23px Georgia";
+          ctx.font = "500 21px Georgia";
           drawTextBlock(
             ctx,
-            escapeCanvasText(box.text),
-            92,
+            normalizeStoryText(box.depends, 190),
+            pad + 28,
             ty,
-            boxW - 56,
-            31,
-            8,
+            textW,
+            25,
+            3,
           );
-          y += boxH + 28;
+          y += boxH + 22;
         }
-        ctx.fillStyle = "#102A43";
-        ctx.font = "800 25px Arial";
-        ctx.fillText(
-          "A pergunta é: o que muda na vida de quem trabalha?",
-          64,
-          y,
-        );
-        y += 42;
-        ctx.fillStyle = "#536174";
-        ctx.font = "500 20px Arial";
+
+        const ctaY = Math.min(Math.max(y + 32, 1500), H - 282);
+        ctx.fillStyle = "#146B53";
+        ctx.fillRect(0, ctaY, W, H - ctaY);
+        ctx.fillStyle = "#E9B931";
+        ctx.fillRect(0, ctaY, W, 8);
+        ctx.fillStyle = "#FFFFFF";
+        ctx.font = "800 30px Arial";
         drawTextBlock(
           ctx,
-          "Veja a análise completa, as fontes e as ressalvas na página.",
-          64,
-          y,
-          W - 128,
+          "Compare os dois caminhos.",
+          pad,
+          ctaY + 72,
+          contentW,
+          37,
+          2,
+        );
+        ctx.fillStyle = "#DCEDE4";
+        ctx.font = "500 21px Arial";
+        drawTextBlock(
+          ctx,
+          normalizeStoryText(data.source, 145),
+          pad,
+          ctaY + 131,
+          contentW,
           28,
           2,
         );
-        ctx.fillStyle = "#a6403d";
-        ctx.font = "800 20px Arial";
+        ctx.fillStyle = "#FFFFFF";
+        ctx.font = "800 21px Arial";
         ctx.fillText(
-          "napontadolapis.org · compare antes de decidir",
-          64,
-          H - 74,
+          "napontadolapis.org · veja a análise completa",
+          pad,
+          H - 48,
         );
         return canvas;
       };
@@ -4199,8 +4337,10 @@
       const canShareFile = (file) => {
         if (!file || typeof navigator.share !== "function") return false;
         try {
-          return typeof navigator.canShare !== "function" ||
-            navigator.canShare({ files: [file] });
+          return (
+            typeof navigator.canShare !== "function" ||
+            navigator.canShare({ files: [file] })
+          );
         } catch {
           return false;
         }
@@ -4231,11 +4371,9 @@
           const blob = await canvasBlob(drawStory(data));
           const file =
             typeof File === "function"
-              ? new File(
-                  [blob],
-                  `na-ponta-do-lapis-${card.id}-story.png`,
-                  { type: "image/png" },
-                )
+              ? new File([blob], `na-ponta-do-lapis-${card.id}-story.png`, {
+                  type: "image/png",
+                })
               : null;
           if (canShareFile(file)) {
             await navigator.share({

@@ -3,7 +3,7 @@
   <head>
     <meta charset="utf-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1" />
-    <meta name="theme-color" content="#162033" />
+    <meta name="theme-color" content="#102A43" />
     <link
       rel="icon"
       href="data:image/svg+xml;base64,PHN2ZyB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciIHZpZXdCb3g9IjAgMCA2NCA0NCIgcm9sZT0iaW1nIiBhcmlhLWxhYmVsPSJCYW5kZWlyYSBkbyBCcmFzaWwiPgogIDxyZWN0IHdpZHRoPSI2NCIgaGVpZ2h0PSI0NCIgcng9IjUiIGZpbGw9IiMwMDliM2EiLz4KICA8cGF0aCBkPSJNMzIgNCA1OCAyMiAzMiA0MCA2IDIyWiIgZmlsbD0iI2ZmZGYwMCIvPgogIDxjaXJjbGUgY3g9IjMyIiBjeT0iMjIiIHI9IjEwLjUiIGZpbGw9IiMwMDI3NzYiLz4KICA8cGF0aCBkPSJNMjIuNiAxOS4zYzUuOS0yLjYgMTIuNC0yLjYgMTguOC4xIiBmaWxsPSJub25lIiBzdHJva2U9IiNmZmYiIHN0cm9rZS13aWR0aD0iMS43Ii8+CiAgPGcgZmlsbD0iI2ZmZiI+CiAgICA8Y2lyY2xlIGN4PSIyNyIgY3k9IjE2LjUiIHI9Ii44Ii8+PGNpcmNsZSBjeD0iMzIiIGN5PSIxNC43IiByPSIuNjUiLz48Y2lyY2xlIGN4PSIzNyIgY3k9IjE3IiByPSIuNyIvPgogICAgPGNpcmNsZSBjeD0iMjUuNiIgY3k9IjIzLjciIHI9Ii42Ii8+PGNpcmNsZSBjeD0iMjkiIGN5PSIyOCIgcj0iLjciLz48Y2lyY2xlIGN4PSIzNS44IiBjeT0iMjciIHI9Ii42NSIvPgogICAgPGNpcmNsZSBjeD0iMzkuMiIgY3k9IjIyLjMiIHI9Ii42Ii8+CiAgPC9nPgo8L3N2Zz4K"
@@ -67,23 +67,23 @@
     />
     <style>
       :root {
-        --ink: #162033;
-        --ink-soft: #405066;
-        --paper: #fbf8f1;
-        --paper-deep: #eee9dd;
-        --white: #fffefa;
-        --line: #d8d2c5;
-        --yellow: #efbd45;
-        --yellow-soft: #f8e3a6;
-        --coral: #9f3f38;
-        --coral-soft: #f7dfda;
-        --green: #2d705c;
-        --green-soft: #dcece3;
-        --blue-soft: #dce9f3;
+        --ink: #102A43;
+        --ink-soft: #3B5368;
+        --paper: #FBFAF4;
+        --paper-deep: #EDF2EA;
+        --white: #FFFFFF;
+        --line: #D7DED6;
+        --yellow: #E9B931;
+        --yellow-soft: #F7E6A5;
+        --coral: #A6403D;
+        --coral-soft: #F4DEDA;
+        --green: #146B53;
+        --green-soft: #DCEDE4;
+        --blue-soft: #DFECF3;
         --sans: "DM Sans", system-ui, -apple-system, "Segoe UI", sans-serif;
         --serif: "Source Serif 4", Georgia, serif;
         --max: 1180px;
-        --shadow: 0 18px 50px rgba(22, 32, 51, 0.12);
+        --shadow: 0 18px 50px rgba(16, 42, 67, 0.12);
       }
       * {
         box-sizing: border-box;
@@ -416,7 +416,7 @@
       }
       .explore {
         background: var(--yellow);
-        border-bottom: 1px solid #d3a531;
+        border-bottom: 1px solid #B8860B;
       }
       .explore-head {
         display: flex;
@@ -529,12 +529,12 @@
         color: #256184;
       }
       .visual-money {
-        background: #f8e3a6;
+        background: #F7E6A5;
         color: #8b6718;
       }
       .visual-health {
-        background: #dcece3;
-        color: #2d705c;
+        background: #DCEDE4;
+        color: #146B53;
       }
       .visual-safety {
         background: #e8e1f1;
@@ -577,7 +577,7 @@
         border: 1px solid #b7c7d4;
         border-radius: 999px;
         background: #fff;
-        color: #1b587d;
+        color: #0B5A45;
         font: 800 11px/1 var(--sans);
         letter-spacing: 0.01em;
         cursor: pointer;
@@ -590,8 +590,8 @@
       }
       .share-icon-btn:hover {
         transform: translateY(-2px);
-        background: #e6eff5;
-        border-color: #1b587d;
+        background: #DFECF3;
+        border-color: #0B5A45;
       }
       .share-icon-btn:disabled {
         opacity: 0.65;
@@ -606,8 +606,8 @@
       .share-callout {
         background: var(--ink);
         color: var(--paper);
-        border-top: 1px solid #26334a;
-        border-bottom: 1px solid #26334a;
+        border-top: 1px solid #16324F;
+        border-bottom: 1px solid #16324F;
       }
       .share-callout-grid {
         display: grid;
@@ -630,7 +630,7 @@
       .share-callout p {
         max-width: 670px;
         margin: 20px 0 0;
-        color: #cbd4df;
+        color: #C9D5DF;
         font-size: 20px;
         line-height: 1.5;
       }
@@ -720,16 +720,38 @@
         content: "Abra esta página no celular para compartilhar";
         display: block;
         margin-top: 18px;
-        color: #cbd4df;
+        color: #C9D5DF;
         text-align: center;
         font: 700 11px/1.4 var(--sans);
       }
       .share-status {
         min-height: 18px;
         margin: 11px 0 0;
-        color: #cbd4df;
+        color: #C9D5DF;
         text-align: center;
         font: 700 11px/1.4 var(--sans);
+      }
+      .share-toast {
+        position: fixed;
+        right: 20px;
+        bottom: 20px;
+        z-index: 30;
+        max-width: min(360px, calc(100vw - 40px));
+        padding: 13px 16px;
+        border: 1px solid rgba(255, 255, 255, 0.18);
+        border-radius: 10px;
+        background: var(--ink);
+        color: var(--white);
+        box-shadow: 0 14px 34px rgba(16, 42, 67, 0.22);
+        font: 700 13px/1.4 var(--sans);
+        opacity: 0;
+        transform: translateY(10px);
+        pointer-events: none;
+        transition: opacity 0.2s ease, transform 0.2s ease;
+      }
+      .share-toast.is-visible {
+        opacity: 1;
+        transform: translateY(0);
       }
       .topic-icon {
         display: grid;
@@ -739,7 +761,7 @@
         height: 52px;
         border-radius: 14px;
         background: var(--blue-soft);
-        color: #1b587d;
+        color: #0B5A45;
       }
       .topic-icon svg {
         width: 28px;
@@ -775,10 +797,10 @@
         border-top: 1px solid var(--line);
       }
       .side-lula {
-        background: #e6eff5;
+        background: #DFECF3;
       }
       .side-flavio {
-        background: #eee8f1;
+        background: #EDE8F2;
       }
       .side-label {
         display: inline-block;
@@ -790,7 +812,7 @@
         text-transform: uppercase;
       }
       .side-lula .side-label {
-        background: #1b587d;
+        background: #0B5A45;
         color: #fff;
       }
       .side-flavio .side-label {
@@ -839,10 +861,10 @@
           align-content: start;
           background: linear-gradient(
             to right,
-            #e6eff5 0%,
-            #e6eff5 50%,
-            #eee8f1 50%,
-            #eee8f1 100%
+            #DFECF3 0%,
+            #DFECF3 50%,
+            #EDE8F2 50%,
+            #EDE8F2 100%
           );
         }
         .side {
@@ -928,7 +950,7 @@
         gap: 7px;
         padding: 18px 25px;
         border-top: 1px solid var(--line);
-        background: #fffefa;
+        background: #FFFFFF;
       }
       .card-summary p {
         margin: 0;
@@ -994,7 +1016,7 @@
       }
       .pt-legacy-lead p {
         margin: 0;
-        color: #d9dfe7;
+        color: #D5DFE6;
         font-size: 18px;
         line-height: 1.5;
       }
@@ -1048,10 +1070,10 @@
         color: #fff;
       }
       .conclusion .section-heading p {
-        color: #d9dfe7;
+        color: #D5DFE6;
       }
       .conclusion .eyebrow {
-        color: #f4d35e;
+        color: #F2C94C;
       }
       .conclusion-grid {
         display: grid;
@@ -1073,7 +1095,7 @@
       }
       .conclusion-lead p {
         margin: 0;
-        color: #d9dfe7;
+        color: #D5DFE6;
         font-size: 18px;
         line-height: 1.5;
       }
@@ -1216,10 +1238,10 @@
         color: #fff;
       }
       .legacy .section-heading p {
-        color: #fffefa;
+        color: #FFFFFF;
       }
       .legacy .eyebrow {
-        color: #fffefa;
+        color: #FFFFFF;
       }
       .legacy-grid {
         display: grid;
@@ -1238,7 +1260,7 @@
       }
       .legacy-lead p {
         margin: 0;
-        color: #d9dfe7;
+        color: #D5DFE6;
         font-size: 18px;
         line-height: 1.5;
       }
@@ -1289,7 +1311,7 @@
       .evidence-panel-head p {
         max-width: 410px;
         margin: 0;
-        color: #d9dfe7;
+        color: #D5DFE6;
         font: 600 12px/1.5 var(--sans);
         text-align: right;
       }
@@ -3284,7 +3306,7 @@
             style="
               margin: 20px 0 0;
               font: 600 12px/1.5 var(--sans);
-              color: #fffefa;
+              color: #FFFFFF;
             "
           >
             Fontes do contexto:
@@ -3992,13 +4014,13 @@
         const ctx = canvas.getContext("2d");
         const W = canvas.width,
           H = canvas.height;
-        ctx.fillStyle = "#fffefa";
+        ctx.fillStyle = "#FFFFFF";
         ctx.fillRect(0, 0, W, H);
-        ctx.fillStyle = "#162033";
+        ctx.fillStyle = "#102A43";
         ctx.fillRect(0, 0, W, 210);
-        ctx.fillStyle = "#f4bd32";
+        ctx.fillStyle = "#E9B931";
         ctx.fillRect(0, 210, W, 8);
-        ctx.fillStyle = "#fffefa";
+        ctx.fillStyle = "#FFFFFF";
         ctx.font = "800 28px Arial";
         ctx.fillText("NA PONTA DO LÁPIS", 64, 92);
         ctx.font = "700 18px Arial";
@@ -4009,7 +4031,7 @@
         ctx.font = "800 23px Arial";
         ctx.fillText(data.topic.toUpperCase(), 64, y);
         y += 57;
-        ctx.fillStyle = "#162033";
+        ctx.fillStyle = "#102A43";
         ctx.font = "800 58px Arial";
         y = drawTextBlock(ctx, data.title, 64, y, W - 128, 62, 2);
         y += 40;
@@ -4033,14 +4055,14 @@
             color: "#246887",
             title: data.lula.title,
             text: data.lula.text,
-            fill: "#e6eff5",
+            fill: "#DFECF3",
           },
           {
             label: "FLÁVIO",
             color: "#665080",
             title: data.flavio.title,
             text: data.flavio.text,
-            fill: "#eee8f1",
+            fill: "#EDE8F2",
           },
         ];
         for (const box of boxes) {
@@ -4048,7 +4070,7 @@
           ctx.fillStyle = box.color;
           ctx.font = "800 20px Arial";
           ctx.fillText(box.label, 92, y + 40);
-          ctx.fillStyle = "#162033";
+          ctx.fillStyle = "#102A43";
           ctx.font = "800 30px Arial";
           let ty = y + 92;
           ty = drawTextBlock(ctx, box.title, 92, ty, boxW - 56, 34, 2);
@@ -4066,7 +4088,7 @@
           );
           y += boxH + 28;
         }
-        ctx.fillStyle = "#162033";
+        ctx.fillStyle = "#102A43";
         ctx.font = "800 25px Arial";
         ctx.fillText(
           "A pergunta é: o que muda na vida de quem trabalha?",
@@ -4095,46 +4117,98 @@
         return canvas;
       };
       const canvasBlob = (canvas) =>
-        new Promise((resolve) => canvas.toBlob(resolve, "image/png"));
+        new Promise((resolve, reject) => {
+          if (typeof canvas.toBlob !== "function") {
+            reject(new Error("Este navegador não consegue gerar a imagem."));
+            return;
+          }
+          canvas.toBlob(
+            (blob) =>
+              blob
+                ? resolve(blob)
+                : reject(new Error("Não foi possível gerar a imagem.")),
+            "image/png",
+          );
+        });
       const downloadBlob = (blob, name) => {
         const url = URL.createObjectURL(blob);
         const a = document.createElement("a");
         a.href = url;
         a.download = name;
+        a.rel = "noopener";
+        document.body.appendChild(a);
         a.click();
-        setTimeout(() => URL.revokeObjectURL(url), 1000);
+        a.remove();
+        setTimeout(() => URL.revokeObjectURL(url), 1500);
+      };
+      const canShareFile = (file) => {
+        if (!file || typeof navigator.share !== "function") return false;
+        try {
+          return typeof navigator.canShare !== "function" ||
+            navigator.canShare({ files: [file] });
+        } catch {
+          return false;
+        }
+      };
+      let shareToastTimer;
+      const announceShare = (message) => {
+        let toast = document.querySelector(".share-toast");
+        if (!toast) {
+          toast = document.createElement("div");
+          toast.className = "share-toast";
+          toast.setAttribute("role", "status");
+          toast.setAttribute("aria-live", "polite");
+          document.body.appendChild(toast);
+        }
+        toast.textContent = message;
+        toast.classList.add("is-visible");
+        clearTimeout(shareToastTimer);
+        shareToastTimer = setTimeout(
+          () => toast.classList.remove("is-visible"),
+          4200,
+        );
       };
       const shareStory = async (card, button) => {
         const data = cardPayload(card);
         button.disabled = true;
         button.setAttribute("aria-label", "Gerando imagem para compartilhar");
-        const blob = await canvasBlob(drawStory(data));
-        const file = new File(
-          [blob],
-          `na-ponta-do-lapis-${card.id}-story.png`,
-          {
-            type: "image/png",
-          },
-        );
         try {
-          if (
-            navigator.share &&
-            (!navigator.canShare || navigator.canShare({ files: [file] }))
-          ) {
+          const blob = await canvasBlob(drawStory(data));
+          const file =
+            typeof File === "function"
+              ? new File(
+                  [blob],
+                  `na-ponta-do-lapis-${card.id}-story.png`,
+                  { type: "image/png" },
+                )
+              : null;
+          if (canShareFile(file)) {
             await navigator.share({
               title: data.title,
               text: `${data.title} — comparação de planos para quem trabalha.`,
               files: [file],
             });
           } else {
-            downloadBlob(blob, file.name);
+            const fileName = `na-ponta-do-lapis-${card.id}-story.png`;
+            downloadBlob(blob, file?.name || fileName);
             button.setAttribute(
               "aria-label",
               "Imagem baixada. Compartilhar este tema novamente",
             );
+            announceShare(
+              "Imagem baixada. Agora você pode publicar no Story ou enviar pelo Firefox.",
+            );
           }
         } catch (error) {
-          if (error.name !== "AbortError") downloadBlob(blob, file.name);
+          if (error.name !== "AbortError") {
+            button.setAttribute(
+              "aria-label",
+              "Não foi possível compartilhar. Tente novamente",
+            );
+            announceShare(
+              "Não foi possível gerar a imagem. Tente clicar novamente.",
+            );
+          }
         } finally {
           button.disabled = false;
           setTimeout(
@@ -4170,14 +4244,31 @@
             if (status)
               status.textContent =
                 "Obrigado por ajudar essa informação a circular.";
-          } else if (navigator.clipboard) {
-            await navigator.clipboard.writeText(window.location.href);
+          } else {
+            let copied = false;
+            if (navigator.clipboard?.writeText) {
+              try {
+                await navigator.clipboard.writeText(window.location.href);
+                copied = true;
+              } catch {
+                copied = false;
+              }
+            }
+            if (!copied) {
+              const input = document.createElement("textarea");
+              input.value = window.location.href;
+              input.setAttribute("readonly", "");
+              input.style.position = "fixed";
+              input.style.opacity = "0";
+              document.body.appendChild(input);
+              input.select();
+              copied = document.execCommand("copy");
+              input.remove();
+            }
             if (status)
-              status.textContent =
-                "Link copiado. Agora é só enviar para quem precisa.";
-          } else if (status) {
-            status.textContent =
-              "Copie o endereço desta página e envie para alguém.";
+              status.textContent = copied
+                ? "Link copiado. Agora é só enviar para quem precisa."
+                : "Copie o endereço desta página e envie para alguém.";
           }
         } catch (error) {
           if (error.name !== "AbortError" && status)

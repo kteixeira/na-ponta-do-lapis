@@ -567,7 +567,7 @@
       }
       .share-icon-btn {
         margin-left: auto;
-        display: none;
+        display: inline-flex;
         align-items: center;
         justify-content: center;
         gap: 7px;
@@ -4244,6 +4244,7 @@
             if (status)
               status.textContent =
                 "Obrigado por ajudar essa informação a circular.";
+            announceShare("Compartilhamento aberto.");
           } else {
             let copied = false;
             if (navigator.clipboard?.writeText) {
@@ -4265,10 +4266,11 @@
               copied = document.execCommand("copy");
               input.remove();
             }
-            if (status)
-              status.textContent = copied
-                ? "Link copiado. Agora é só enviar para quem precisa."
-                : "Copie o endereço desta página e envie para alguém.";
+            const message = copied
+              ? "Link copiado. Agora é só enviar para quem precisa."
+              : "Copie o endereço desta página e envie para alguém.";
+            if (status) status.textContent = message;
+            announceShare(message);
           }
         } catch (error) {
           if (error.name !== "AbortError" && status)

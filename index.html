@@ -403,6 +403,57 @@
         font: 700 18px/1.42 var(--sans);
         letter-spacing: -0.01em;
       }
+      .editorial-note {
+        margin-top: 22px;
+        padding: 16px 18px;
+        border: 1px solid var(--line);
+        border-left: 4px solid var(--green);
+        border-radius: 12px;
+        background: rgba(255, 255, 255, 0.72);
+        color: var(--ink-soft);
+        font: 500 15px/1.5 var(--sans);
+      }
+      .editorial-note strong {
+        display: block;
+        margin-bottom: 5px;
+        color: var(--ink);
+        font-weight: 800;
+      }
+      .accountability {
+        background: var(--paper-deep);
+        border-top: 1px solid var(--line);
+        border-bottom: 1px solid var(--line);
+      }
+      .accountability-grid {
+        display: grid;
+        grid-template-columns: repeat(2, minmax(0, 1fr));
+        gap: 16px;
+        margin-top: 30px;
+      }
+      .accountability-card {
+        padding: 23px 24px 21px;
+        border: 1px solid var(--line);
+        border-radius: 14px;
+        background: var(--white);
+      }
+      .accountability-card h3 {
+        margin: 10px 0;
+        font: 800 22px/1.08 var(--sans);
+        letter-spacing: -0.03em;
+      }
+      .accountability-card p {
+        margin: 0;
+        color: var(--ink-soft);
+        font-size: 17px;
+        line-height: 1.48;
+      }
+      .accountability-source {
+        display: block;
+        margin-top: 16px;
+        color: var(--green);
+        font: 800 12px/1.4 var(--sans);
+        text-decoration: none;
+      }
       .hero-card {
         position: relative;
         overflow: hidden;
@@ -1558,7 +1609,8 @@
           text-align: left;
           margin-top: 15px;
         }
-        .sources-grid {
+        .sources-grid,
+        .accountability-grid {
           grid-template-columns: 1fr;
         }
         .legacy-grid,
@@ -1759,8 +1811,9 @@
         </button>
         <nav id="nav-links" class="nav-links" aria-label="Navegação principal">
           <a href="#explore">Explorar ideias</a><a href="#comparar">Comparar</a
-          ><a href="#futuro">Futuro</a><a href="#legado">Legados</a
-          ><a href="#democracia">Democracia</a><a href="#fontes">Fontes</a
+          ><a href="#futuro">Futuro</a><a href="#conta">O que entra na conta</a
+          ><a href="#legado">Legados</a><a href="#democracia">Democracia</a
+          ><a href="#fontes">Fontes</a
           ><button
             id="share-header"
             class="nav-share"
@@ -1809,6 +1862,13 @@
               Você não precisa saber tudo de Brasília. Comece por uma pergunta
               simples: “isso muda o quê na minha vida?”
             </p>
+            <div class="editorial-note">
+              <strong>Como esta comparação foi feita</strong>
+              Para comparar os dois projetos, foi preciso escolher alguns
+              assuntos e informações. Aqui, mostramos essas escolhas, usamos
+              fontes e apontamos os limites de cada proposta. O foco é entender
+              o que pode mudar na vida de quem trabalha.
+            </div>
           </div>
           <aside class="hero-card">
             <div class="eyebrow">A pergunta que importa</div>
@@ -1941,6 +2001,17 @@
                 <path d="M4 5h16v14H4z" />
                 <path d="M8 9h8M8 13h6M8 17h4" /></svg
               >Democracia e voto</a
+            ><a class="topic-link" href="#conta"
+              ><svg
+                aria-hidden="true"
+                viewBox="0 0 24 24"
+                fill="none"
+                stroke="currentColor"
+                stroke-width="2"
+              >
+                <path d="M4 5h16v14H4z" />
+                <path d="M8 9h8M8 13h5M8 17h8" /></svg
+              >O que entra na conta</a
             ><a class="topic-link" href="#conclusao"
               ><svg
                 aria-hidden="true"
@@ -1975,9 +2046,9 @@
               <div class="eyebrow">Dois caminhos</div>
               <h2>Vamos ver o que pode mudar no seu dia a dia.</h2>
               <p>
-                Aqui você separa o que já aconteceu do que está sendo prometido,
-                entende os dois caminhos e confere as fontes antes de tirar sua
-                conclusão.
+                Aqui você separa o que já aconteceu do que está sendo prometido.
+                Quando falamos de uma possibilidade, deixamos isso claro. Você
+                entende os dois caminhos e confere as fontes antes de concluir.
               </p>
             </div>
           </div>
@@ -3203,6 +3274,93 @@
         </div>
       </section>
 
+      <section id="conta" class="accountability section">
+        <div class="wrap">
+          <div class="section-heading">
+            <div class="eyebrow">Para não comparar só o discurso</div>
+            <h2>O que ainda entra na conta?</h2>
+            <p>
+              Uma promessa precisa caber no orçamento, passar pelo Congresso e
+              ser colocada em prática por uma equipe. Quando há resultado,
+              mostramos o dado. Quando é promessa ou possibilidade, avisamos.
+            </p>
+          </div>
+          <div class="accountability-grid">
+            <article class="accountability-card">
+              <div class="eyebrow">Lula</div>
+              <h3>Experiência, mas sem cheque em branco</h3>
+              <p>
+                Lula já governou em momentos difíceis. Nos primeiros governos,
+                combinou mais empregos, salário mínimo valendo mais e políticas
+                sociais com crescimento. Hoje, o desafio é seguir por esse
+                caminho sem deixar a conta crescer demais e usando melhor o
+                dinheiro público. As previsões indicam um ajuste aos poucos, mas
+                a conta precisa ser acompanhada.
+              </p>
+              <a
+                class="accountability-source"
+                href="https://www.ipea.gov.br/cartadeconjuntura/index.php/category/financas-publicas/"
+                target="_blank"
+                rel="noopener"
+                >Fonte: Ipea — finanças públicas</a
+              >
+            </article>
+            <article class="accountability-card">
+              <div class="eyebrow">Flávio</div>
+              <h3>Promessas que ainda precisam fechar</h3>
+              <p>
+                O plano fala em cortar impostos, reduzir despesas e investir em
+                obras. O que ainda falta explicar é quais gastos seriam cortados
+                e como saúde, educação, aposentadorias e serviços seriam
+                mantidos. A proposta ainda depende de detalhes e de conversa com
+                o Congresso.
+              </p>
+              <a
+                class="accountability-source"
+                href="https://www.nexojornal.com.br/expresso/2026/09/24/flavio-bolsonaro-proposta-economica-ministra-economia-flavio"
+                target="_blank"
+                rel="noopener"
+                >Fonte: Nexo — plano econômico</a
+              >
+            </article>
+            <article class="accountability-card">
+              <div class="eyebrow">Orçamento público</div>
+              <h3>Quem paga e quem decide?</h3>
+              <p>
+                O presidente não decide tudo sozinho. O orçamento depende do
+                Congresso, de regras já existentes e do dinheiro que entra. A
+                pergunta vale para os dois lados: de onde vem o dinheiro e o que
+                continua protegido quando a conta aperta?
+              </p>
+              <a
+                class="accountability-source"
+                href="https://www.bcb.gov.br/estatisticas/estatisticasfiscais"
+                target="_blank"
+                rel="noopener"
+                >Fonte: Banco Central — estatísticas fiscais</a
+              >
+            </article>
+            <article class="accountability-card">
+              <div class="eyebrow">Supremo Tribunal Federal</div>
+              <h3>Quem também escolhe o rumo da Corte?</h3>
+              <p>
+                O presidente indica ministros do STF, mas o Senado precisa
+                aprovar. Isso importa porque o Tribunal decide assuntos ligados
+                ao trabalho, aos direitos sociais, ao meio ambiente e à
+                democracia. O histórico e os critérios de cada indicação também
+                contam.
+              </p>
+              <a
+                class="accountability-source"
+                href="https://portal.stf.jus.br/constituicao-supremo/artigo.asp?abrirBase=CF&amp;abrirArtigo=101"
+                target="_blank"
+                rel="noopener"
+                >Fonte: STF — artigo 101 da Constituição</a
+              >
+            </article>
+          </div>
+        </div>
+      </section>
       <section id="legado" class="legacy section">
         <div class="wrap">
           <div class="section-heading">
@@ -3631,8 +3789,9 @@
             <strong>Não é escolher entre perfeito e imperfeito.</strong> É
             comparar histórico, propostas e grupos atendidos. Para quem
             trabalha, Lula aparece como uma aposta mais segura porque junta
-            crescimento com renda, direitos e proteção — sem esconder que ainda
-            há problemas e que nada vem garantido.
+            crescimento com renda, direitos e proteção. Seu histórico de
+            execução pesa a favor, embora o próximo governo ainda precise cuidar
+            das despesas e melhorar a qualidade do gasto.
           </div>
         </div>
       </section>
